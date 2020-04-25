@@ -9,21 +9,45 @@
 /* Begin PBXBuildFile section */
 		93A8540624545BB900F520D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8540524545BB900F520D8 /* AppDelegate.swift */; };
 		93A8540824545BB900F520D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8540724545BB900F520D8 /* SceneDelegate.swift */; };
-		93A8540F24545BBC00F520D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A8540E24545BBC00F520D8 /* Assets.xcassets */; };
 		93A8541D245466C700F520D8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8541C245466C700F520D8 /* Coordinator.swift */; };
 		93A8541F2454674D00F520D8 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8541E2454674D00F520D8 /* DataProvider.swift */; };
 		93A854232454678600F520D8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854222454678600F520D8 /* AppCoordinator.swift */; };
+		93A85428245486E500F520D8 /* HeroesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A85427245486E500F520D8 /* HeroesCoordinator.swift */; };
+		93A8542A245486F600F520D8 /* VillainsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A85429245486F600F520D8 /* VillainsCoordinator.swift */; };
+		93A8542C2454870500F520D8 /* CombatsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8542B2454870500F520D8 /* CombatsCoordinator.swift */; };
+		93A8542E24548EE000F520D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A8542D24548EE000F520D8 /* Assets.xcassets */; };
+		93A854332454A3C100F520D8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854322454A3C100F520D8 /* UIImage+Extension.swift */; };
+		93A854352454BB5800F520D8 /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854342454BB5800F520D8 /* HeroesViewModel.swift */; };
+		93A854372454BB9700F520D8 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854362454BB9700F520D8 /* HeroesViewController.swift */; };
+		93A854392454BD5600F520D8 /* CombatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854382454BD5600F520D8 /* CombatsViewModel.swift */; };
+		93A8543B2454BDFD00F520D8 /* CombatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8543A2454BDFD00F520D8 /* CombatsViewController.swift */; };
+		93A8543D2454BE6700F520D8 /* VillainsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8543C2454BE6700F520D8 /* VillainsViewModel.swift */; };
+		93A8543F2454BEE400F520D8 /* VillainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8543E2454BEE400F520D8 /* VillainsViewController.swift */; };
+		93A854412454C86500F520D8 /* LocalDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854402454C86500F520D8 /* LocalDataProvider.swift */; };
+		93D28A982454CA6F00CC75AC /* CoreDataDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D28A972454CA6F00CC75AC /* CoreDataDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		93A8540224545BB900F520D8 /* AvengersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvengersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A8540524545BB900F520D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93A8540724545BB900F520D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		93A8540E24545BBC00F520D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93A8541324545BBC00F520D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A8541C245466C700F520D8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		93A8541E2454674D00F520D8 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		93A854222454678600F520D8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		93A85427245486E500F520D8 /* HeroesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCoordinator.swift; sourceTree = "<group>"; };
+		93A85429245486F600F520D8 /* VillainsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillainsCoordinator.swift; sourceTree = "<group>"; };
+		93A8542B2454870500F520D8 /* CombatsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatsCoordinator.swift; sourceTree = "<group>"; };
+		93A8542D24548EE000F520D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Gitlab David/project/Assets.xcassets"; sourceTree = "<group>"; };
+		93A854322454A3C100F520D8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		93A854342454BB5800F520D8 /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
+		93A854362454BB9700F520D8 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
+		93A854382454BD5600F520D8 /* CombatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatsViewModel.swift; sourceTree = "<group>"; };
+		93A8543A2454BDFD00F520D8 /* CombatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatsViewController.swift; sourceTree = "<group>"; };
+		93A8543C2454BE6700F520D8 /* VillainsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillainsViewModel.swift; sourceTree = "<group>"; };
+		93A8543E2454BEE400F520D8 /* VillainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillainsViewController.swift; sourceTree = "<group>"; };
+		93A854402454C86500F520D8 /* LocalDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataProvider.swift; sourceTree = "<group>"; };
+		93D28A972454CA6F00CC75AC /* CoreDataDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +80,14 @@
 		93A8540424545BB900F520D8 /* AvengersApp */ = {
 			isa = PBXGroup;
 			children = (
+				93A854312454A3A600F520D8 /* Extensions */,
 				93A8540524545BB900F520D8 /* AppDelegate.swift */,
 				93A8540724545BB900F520D8 /* SceneDelegate.swift */,
 				93A8541324545BBC00F520D8 /* Info.plist */,
 				93A8541924545DD000F520D8 /* Coordinator */,
+				93A854242454866900F520D8 /* Heroes */,
+				93A854262454868000F520D8 /* Combats */,
+				93A854252454867900F520D8 /* Villains */,
 				93A8541A24545DE500F520D8 /* Resources */,
 				93A8541B24545E0100F520D8 /* DataProvider */,
 			);
@@ -71,6 +99,9 @@
 			children = (
 				93A8541C245466C700F520D8 /* Coordinator.swift */,
 				93A854222454678600F520D8 /* AppCoordinator.swift */,
+				93A85427245486E500F520D8 /* HeroesCoordinator.swift */,
+				93A8542B2454870500F520D8 /* CombatsCoordinator.swift */,
+				93A85429245486F600F520D8 /* VillainsCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -78,7 +109,7 @@
 		93A8541A24545DE500F520D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				93A8540E24545BBC00F520D8 /* Assets.xcassets */,
+				93A8542D24548EE000F520D8 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -96,6 +127,8 @@
 		93A854202454675900F520D8 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				93A854402454C86500F520D8 /* LocalDataProvider.swift */,
+				93D28A972454CA6F00CC75AC /* CoreDataDatabase.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -105,6 +138,41 @@
 			children = (
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		93A854242454866900F520D8 /* Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				93A854342454BB5800F520D8 /* HeroesViewModel.swift */,
+				93A854362454BB9700F520D8 /* HeroesViewController.swift */,
+			);
+			path = Heroes;
+			sourceTree = "<group>";
+		};
+		93A854252454867900F520D8 /* Villains */ = {
+			isa = PBXGroup;
+			children = (
+				93A8543C2454BE6700F520D8 /* VillainsViewModel.swift */,
+				93A8543E2454BEE400F520D8 /* VillainsViewController.swift */,
+			);
+			path = Villains;
+			sourceTree = "<group>";
+		};
+		93A854262454868000F520D8 /* Combats */ = {
+			isa = PBXGroup;
+			children = (
+				93A854382454BD5600F520D8 /* CombatsViewModel.swift */,
+				93A8543A2454BDFD00F520D8 /* CombatsViewController.swift */,
+			);
+			path = Combats;
+			sourceTree = "<group>";
+		};
+		93A854312454A3A600F520D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				93A854322454A3C100F520D8 /* UIImage+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A8540F24545BBC00F520D8 /* Assets.xcassets in Resources */,
+				93A8542E24548EE000F520D8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,10 +244,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D28A982454CA6F00CC75AC /* CoreDataDatabase.swift in Sources */,
+				93A854352454BB5800F520D8 /* HeroesViewModel.swift in Sources */,
+				93A8542C2454870500F520D8 /* CombatsCoordinator.swift in Sources */,
+				93A854412454C86500F520D8 /* LocalDataProvider.swift in Sources */,
+				93A854392454BD5600F520D8 /* CombatsViewModel.swift in Sources */,
+				93A8542A245486F600F520D8 /* VillainsCoordinator.swift in Sources */,
+				93A8543B2454BDFD00F520D8 /* CombatsViewController.swift in Sources */,
 				93A8540624545BB900F520D8 /* AppDelegate.swift in Sources */,
+				93A854332454A3C100F520D8 /* UIImage+Extension.swift in Sources */,
 				93A8540824545BB900F520D8 /* SceneDelegate.swift in Sources */,
+				93A85428245486E500F520D8 /* HeroesCoordinator.swift in Sources */,
 				93A854232454678600F520D8 /* AppCoordinator.swift in Sources */,
 				93A8541F2454674D00F520D8 /* DataProvider.swift in Sources */,
+				93A8543F2454BEE400F520D8 /* VillainsViewController.swift in Sources */,
+				93A854372454BB9700F520D8 /* HeroesViewController.swift in Sources */,
+				93A8543D2454BE6700F520D8 /* VillainsViewModel.swift in Sources */,
 				93A8541D245466C700F520D8 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rigonpa.AvengersApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -333,7 +413,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rigonpa.AvengersApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
