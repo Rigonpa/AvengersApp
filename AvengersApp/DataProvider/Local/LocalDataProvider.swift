@@ -16,6 +16,7 @@ protocol LocalDataProvider {
     func createHeroe() -> Heroe?
     func fetchHeroes() -> [Heroe]?
     func deleteHeroe(with: String)
+    func provideInitialHeroesData() -> [Heroe]?
 
     // Combats
     func createCombat() -> Combat?
@@ -26,4 +27,5 @@ protocol LocalDataProvider {
     func createVillain() -> Villain?
     func fetchVillains() -> [Villain]?
     func deleteVillain(with: String)
+    func provideIntialVillainsData() -> [Villain]?
 }

@@ -11,8 +11,11 @@ import Foundation
 class DataProvider {
     
     let localDataProvider: LocalDataProvider?
+    let remoteDataProvider: RemoteDataProvider?
+    
     init() {
         localDataProvider = CoreDataDatabase()
+        remoteDataProvider = RemoteDatabase()
     }
     
     // MARK: - Common
@@ -57,5 +60,15 @@ class DataProvider {
     
     func deleteVillain(with name: String) {
         localDataProvider?.deleteVillain(with: name)
+    }
+    
+    // MARK: - Initial characters data
+    
+    func provideInitialHeroes() -> [Heroe]? {
+        localDataProvider?.provideInitialHeroesData()
+    }
+    
+    func provideInitialVillains() -> [Villain]? {
+        localDataProvider?.provideIntialVillainsData()
     }
 }

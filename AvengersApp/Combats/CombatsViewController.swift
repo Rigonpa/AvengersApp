@@ -23,6 +23,13 @@ class CombatsViewController: UIViewController {
     
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+    
+    // MARK: - Private methods
+    private func setupUI() {
+        navigationItem.title = "Combats"
         view.backgroundColor = #colorLiteral(red: 0.77372998, green: 0.8594649434, blue: 0.9724978805, alpha: 1)
     }
 }
