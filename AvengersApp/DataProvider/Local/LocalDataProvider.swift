@@ -9,5 +9,21 @@
 import Foundation
 
 protocol LocalDataProvider {
-    func saveData()
+
+    func persist()
+
+    // Heroes
+    func createHeroe() -> Heroe?
+    func fetchHeroes() -> [Heroe]?
+    func deleteHeroe(with: String)
+
+    // Combats
+    func createCombat() -> Combat?
+    func fetchCombats() -> [Combat]?
+    func deleteCombat(with: Int16)
+
+    // Villains
+    func createVillain() -> Villain?
+    func fetchVillains() -> [Villain]?
+    func deleteVillain(with: String)
 }

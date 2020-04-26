@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9334829C245590D400C7F8E7 /* AvengersDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9334829A245590D400C7F8E7 /* AvengersDatabase.xcdatamodeld */; };
 		93A8540624545BB900F520D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8540524545BB900F520D8 /* AppDelegate.swift */; };
 		93A8540824545BB900F520D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8540724545BB900F520D8 /* SceneDelegate.swift */; };
 		93A8541D245466C700F520D8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8541C245466C700F520D8 /* Coordinator.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9334829B245590D400C7F8E7 /* AvengersDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AvengersDatabase.xcdatamodel; sourceTree = "<group>"; };
 		93A8540224545BB900F520D8 /* AvengersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvengersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A8540524545BB900F520D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93A8540724545BB900F520D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93348299245590A800C7F8E7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9334829A245590D400C7F8E7 /* AvengersDatabase.xcdatamodeld */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		93A853F924545BB900F520D8 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		93A854202454675900F520D8 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				93348299245590A800C7F8E7 /* Domain */,
 				93A854402454C86500F520D8 /* LocalDataProvider.swift */,
 				93D28A972454CA6F00CC75AC /* CoreDataDatabase.swift */,
 			);
@@ -251,6 +262,7 @@
 				93A854392454BD5600F520D8 /* CombatsViewModel.swift in Sources */,
 				93A8542A245486F600F520D8 /* VillainsCoordinator.swift in Sources */,
 				93A8543B2454BDFD00F520D8 /* CombatsViewController.swift in Sources */,
+				9334829C245590D400C7F8E7 /* AvengersDatabase.xcdatamodeld in Sources */,
 				93A8540624545BB900F520D8 /* AppDelegate.swift in Sources */,
 				93A854332454A3C100F520D8 /* UIImage+Extension.swift in Sources */,
 				93A8540824545BB900F520D8 /* SceneDelegate.swift in Sources */,
@@ -439,6 +451,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9334829A245590D400C7F8E7 /* AvengersDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9334829B245590D400C7F8E7 /* AvengersDatabase.xcdatamodel */,
+			);
+			currentVersion = 9334829B245590D400C7F8E7 /* AvengersDatabase.xcdatamodel */;
+			path = AvengersDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 93A853FA24545BB900F520D8 /* Project object */;
 }

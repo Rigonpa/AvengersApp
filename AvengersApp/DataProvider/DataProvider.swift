@@ -10,4 +10,52 @@ import Foundation
 
 class DataProvider {
     
+    let localDataProvider: LocalDataProvider?
+    init() {
+        localDataProvider = CoreDataDatabase()
+    }
+    
+    // MARK: - Common
+    func saveAvengerUpdates() {
+        localDataProvider?.persist()
+    }
+    
+    // MARK: - Heroes persistance
+    func createHeroe() -> Heroe? {
+        return localDataProvider?.createHeroe()
+    }
+    
+    func loadHeroes() -> [Heroe]? {
+        return localDataProvider?.fetchHeroes()
+    }
+    
+    func deleteHeroe(with name: String) {
+        localDataProvider?.deleteHeroe(with: name)
+    }
+    
+    // MARK: - Combats persistance
+    func createCombat() -> Combat? {
+        return localDataProvider?.createCombat()
+    }
+    
+    func loadCombats() -> [Combat]? {
+        return localDataProvider?.fetchCombats()
+    }
+    
+    func deleteCombat(with id: Int16) {
+        localDataProvider?.deleteCombat(with: id)
+    }
+    
+    // MARK: - Villains persistance
+    func createVillain() -> Villain? {
+        return localDataProvider?.createVillain()
+    }
+    
+    func loadVillains() -> [Villain]? {
+        return localDataProvider?.fetchVillains()
+    }
+    
+    func deleteVillain(with name: String) {
+        localDataProvider?.deleteVillain(with: name)
+    }
 }
