@@ -9,11 +9,11 @@
 import Foundation
 
 protocol VillainsCoordinatorDelegate {
-    
+    func onDetailRequestedFor(_ villain: Villain)
 }
 
 protocol VillainsViewDelegate {
-    
+    func onVillainPowerWasUpdated()
 }
 
 class VillainsViewModel {
@@ -31,20 +31,45 @@ class VillainsViewModel {
     
     // MARK: - Lifecycle methods
     func viewDidLoad() {
-        guard let initialVillains = dataProvider.provideInitialVillains() else { return } // Only executes once to store heroes data into coredata database.
+        var villains: [Villain]?
+        let villainsSaved = dataProvider.loadVillains()
+        if villainsSaved != [] {
+            // Only executes once to store villains data into coredata database.
+            villains = []
+            villains = villainsSaved
+        } else {
+            // From second time always executes this section
+            guard let initialVillains = dataProvider.provideInitialVillains() else { return }
+            villains = initialVillains
+            dataProvider.saveAvengerUpdates()
+        }
         
-        for each in 0...initialVillains.count - 1 {
-            villainViewModels.append(VillainsCellViewModel(villain: initialVillains[each]))
+        for each in 0...villains!.count - 1 {
+            villainViewModels.append(VillainsCellViewModel(villain: villains![each]))
 //            each.viewModelDelegate = self
         }
     }
     
-    // MARK: -Tableview methods
+    // MARK: - Tableview methods
+    func didSelectRow(_ index: IndexPath) {
+        coordinatorDelegate?.onDetailRequestedFor(villainViewModels[index.row].villain)
+    }
+    
     func numberRows() -> Int {
         return villainViewModels.count
     }
     
     func oneVillainViewModel(_ index: IndexPath) -> VillainsCellViewModel? {
         return villainViewModels[index.row]
+    }
+    
+    // MARK: - Detail view model communication
+    func onPowerWasUpdated() {
+        villainViewModels = []
+        guard let villainsSaved = dataProvider.loadVillains() else { return }
+        for each in 0...villainsSaved.count - 1 {
+            villainViewModels.append(VillainsCellViewModel(villain: villainsSaved[each]))
+        }
+        viewDelegate?.onVillainPowerWasUpdated()
     }
 }

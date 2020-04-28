@@ -25,7 +25,7 @@ class AvengersCell: UITableViewCell {
     lazy var avengerNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = #colorLiteral(red: 0.02531321719, green: 0.4073432684, blue: 0.903057158, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.1956750751, green: 0.285889715, blue: 0.4968746305, alpha: 1)
         label.font = UIFont(name: AvengersCell.avengersAppFont, size: 17)
         label.textAlignment = .center
         return label

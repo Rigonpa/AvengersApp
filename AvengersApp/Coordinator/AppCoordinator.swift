@@ -82,19 +82,19 @@ class AppCoordinator: Coordinator {
         tabBarController.tabBar.barStyle = .default
         tabBarController.tabBar.isTranslucent = true
         tabBarController.tabBar.tintColor = #colorLiteral(red: 0.02531321719, green: 0.4073432684, blue: 0.903057158, alpha: 1)
-        tabBarController.tabBar.shadowImage = UIColor.black.as1ptImage()
         tabBarController.tabBar.itemPositioning = .centered
         tabBarController.tabBar.itemWidth = 100
         
         // Navigation Bar:
         n1.navigationBar.barTintColor = #colorLiteral(red: 0.4681576174, green: 0.6627706297, blue: 0.9544852136, alpha: 1)
+        n1.navigationBar.shadowImage = UIColor.white.as1ptImage()
         n1.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.baselineOffset: -3,
             NSAttributedString.Key.font: UIFont(name: AvengersCell.avengersAppFont, size: 22)!
         ]
         
-        n2.navigationBar.barTintColor = #colorLiteral(red: 0.5229842866, green: 0.6770756636, blue: 0.9359452976, alpha: 1)
+        n2.navigationBar.barTintColor = #colorLiteral(red: 0.4681576174, green: 0.6627706297, blue: 0.9544852136, alpha: 1)
         n2.navigationBar.shadowImage = UIColor.white.as1ptImage()
         n2.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white,

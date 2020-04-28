@@ -11,7 +11,8 @@ import Foundation
 protocol LocalDataProvider {
 
     func persist()
-
+    func deleteAll()
+    
     // Heroes
     func createHeroe() -> Heroe?
     func fetchHeroes() -> [Heroe]?

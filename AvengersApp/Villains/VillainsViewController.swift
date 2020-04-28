@@ -35,8 +35,20 @@ class VillainsViewController: UIViewController {
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        print("Before")
+//        print("\n\n")
+//        viewModel.showAllVillains()
+//        viewModel.deleteAll()
+//        print("Before\n\n\n")
+        
         setupUI()
         viewModel.viewDidLoad()
+        
+        print("After")
+        print("\n\n")
+        viewModel.showAllVillains()
+        print("After")
     }
     
     // MARK: - Private methods
@@ -52,6 +64,10 @@ class VillainsViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
+    fileprivate func updateUI() {
+        tableView.reloadData()
+    }
 }
 
 // MARK: - Tableview methods
@@ -59,6 +75,7 @@ class VillainsViewController: UIViewController {
 extension VillainsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -84,5 +101,7 @@ extension VillainsViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - View model communication
 extension VillainsViewController: VillainsViewDelegate {
-    
+    func onVillainPowerWasUpdated() {
+        updateUI()
+    }
 }

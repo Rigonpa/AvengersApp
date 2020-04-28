@@ -20,6 +20,23 @@ final class CoreDataDatabase: LocalDataProvider {
     func persist() {
         try? context.save()
     }
+    
+    func deleteAll() {
+
+        let heroeFetchRequest = NSFetchRequest<NSManagedObject>(entityName: heroeEntity)
+        let heroeToDelete = try? context.fetch(heroeFetchRequest)
+        heroeToDelete?.forEach{ context.delete($0) }
+        
+        let villainFetchRequest = NSFetchRequest<NSManagedObject>(entityName: villainEntity)
+        let villainToDelete = try? context.fetch(villainFetchRequest)
+        villainToDelete?.forEach{ context.delete($0) }
+        
+        let combatFetchRequest = NSFetchRequest<NSManagedObject>(entityName: combatEntity)
+        let combatToDelete = try? context.fetch(combatFetchRequest)
+        combatToDelete?.forEach{ context.delete($0) }
+        
+        try? context.save()
+    }
 
     // MARK: - Heroes persistance
     private var heroeEntity = "Heroe"
@@ -193,7 +210,7 @@ final class CoreDataDatabase: LocalDataProvider {
         guard let villain2 = createVillain() else { return nil }
         villain2.name = "Dormammu"
         villain2.profile_image = "img_villain_dormammu"
-        villain2.character_story = "If the powerful Dormammu’s exact beginning has ever been recorded on Earth, it was either lost or remains undiscovered. But, suffice to say, the powerful being has ruled his native Dark Dimension for untold ages and is its complete master. Despite his dominion over his home, the evil entity still craves more power and has decided that only by conquering and subjugating all other realms, planes, and dimensions can he ever truly be sated in his desires. For reasons purely his own, Dormammu has set his eye on Earth’s plane as the most important to conquer, perhaps owing to its suffusion of magic and magic-wielders. At some point in Earth’s past, a tome—the Book of Cagliostro—was crafted to include a ritual to summon Dormammu, providing the means for humans to approach the powerful being and form a connection between Earth and the Dark Dimension. This is important because the presence of three magic Sanctums on the planet prevent Dormammu from invading himself, despite his immense abilities."
+        villain2.character_story = "If the powerful Dormammu’s exact beginning has ever been recorded on Earth, it was either lost or remains undiscovered. But, suffice to say, the powerful being has ruled his native Dark Dimension for untold ages and is its complete master. Despite his dominion over his home, the evil entity still craves more power and has decided that only by conquering and subjugating all other realms, planes, and dimensions can he ever truly be sated in his desires. For reasons purely his own, Dormammu has set his eye on Earth’s plane as the most important to conquer, perhaps owing to its suffusion of magic and magic-wielders."
         villain2.power = 4
         initialVillains.append(villain2)
         
@@ -233,7 +250,7 @@ final class CoreDataDatabase: LocalDataProvider {
         guard let villain7 = createVillain() else { return nil }
         villain7.name = "Malekith"
         villain7.profile_image = "img_villain_malekith"
-        villain7.character_story = "Centuries ago Malekith was born in the Dark Woods in miserable surroundings. From his birth on, he was different then his peers since his face was half light, half dark. His own mother had sold him to merchants for her own gain. Eventually, Malekith returned to his mother, now a grown Elf, and killed her. Malekith proved himself to be an enemy of both the humans of Earth and the gods of Asgard. Malekith's greatest weapon was the Casket of Ancient Winters, which contained mystical forces that could reproduce the overwhelming frigidity of another of the Nine Worlds, Niffleheim, the realm of ice. To prevent Malekith from releasing the contents of the casket, Eric Willis, a mortal man, stole the casket. Without the casket's power Malekith was unable to protect himself from the wrath of Odin, the All-Father, Ruler of Asgard. Odin banished Malekith to another dimension where he remained for centuries."
+        villain7.character_story = "Centuries ago Malekith was born in the Dark Woods in miserable surroundings. From his birth on, he was different then his peers since his face was half light, half dark. His own mother had sold him to merchants for her own gain. Eventually, Malekith returned to his mother, now a grown Elf, and killed her. Malekith proved himself to be an enemy of both the humans of Earth and the gods of Asgard. Malekith's greatest weapon was the Casket of Ancient Winters, which contained mystical forces that could reproduce the overwhelming frigidity of another of the Nine Worlds, Niffleheim, the realm of ice."
         villain7.power = 4
         initialVillains.append(villain7)
         
@@ -249,7 +266,7 @@ final class CoreDataDatabase: LocalDataProvider {
         guard let villain9 = createVillain() else { return nil }
         villain9.name = "Thanos"
         villain9.profile_image = "img_villain_thanos"
-        villain9.character_story = "Thanos was born on Saturn's moon Titan as the son of Eternals A'lars and Sui-San; his brother is Eros of Titan. Thanos carries the Deviants gene, and as such, shares the physical appearance of the Eternals' cousin race. Shocked by his appearance and the belief that he would destroy all life in the universe, Sui-San attempted to kill him, but she was stopped by A'lars. During his school years, Thanos was a pacifist[11] and would only play with his brother Eros and pets. By adolescence, Thanos had become fascinated with nihilism and death, worshipping and eventually falling in love with the physical embodiment of death, Mistress Death.[12] As an adult, Thanos augmented his physical strength and powers through his superior scientific knowledge. He also attempted to create a new life for himself by siring many children as well as becoming a pirate. He finds no fulfillment in either until he is visited again by Mistress Death, for whom he murders his offspring and his pirate captain."
+        villain9.character_story = "Thanos was born on Saturn's moon Titan as the son of Eternals A'lars and Sui-San; his brother is Eros of Titan. Thanos carries the Deviants gene, and as such, shares the physical appearance of the Eternals' cousin race. Shocked by his appearance and the belief that he would destroy all life in the universe, Sui-San attempted to kill him, but she was stopped by A'lars. During his school years, Thanos was a pacifist and would only play with his brother Eros and pets. By adolescence, Thanos had become fascinated with nihilism and death, worshipping and eventually falling in love with the physical embodiment of death, Mistress Death. As an adult, Thanos augmented his physical strength and powers through his superior scientific knowledge."
         villain9.power = 5
         initialVillains.append(villain9)
         

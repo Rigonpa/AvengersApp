@@ -13,6 +13,8 @@ class VillainsCoordinator: Coordinator {
     let presenter: UINavigationController
     let dataProvider: DataProvider
     
+    var villainsViewModel: VillainsViewModel?
+    
     init(presenter: UINavigationController, dataProvider: DataProvider) {
         self.presenter = presenter
         self.dataProvider = dataProvider
@@ -24,6 +26,7 @@ class VillainsCoordinator: Coordinator {
         
         villainsViewModel.coordinatorDelegate = self
         villainsViewModel.viewDelegate = villainsViewController
+        self.villainsViewModel = villainsViewModel // ****** THE MOST IMPORTANT STEP I ALWAYS FORGET ******
         
         presenter.pushViewController(villainsViewController, animated: true)
     }
@@ -35,5 +38,24 @@ class VillainsCoordinator: Coordinator {
 
 // View model communication
 extension VillainsCoordinator: VillainsCoordinatorDelegate {
+    func onDetailRequestedFor(_ villain: Villain) {
+        let avengerDetailsViewModel = AvengerDetailsViewModel(dataProvider: dataProvider)
+        let avengerDetailsViewController = AvengerDetailsViewController(viewModel: avengerDetailsViewModel)
+        
+        avengerDetailsViewModel.coordinatorDelegate = self
+        avengerDetailsViewModel.viewDelegate = avengerDetailsViewController
+        
+        avengerDetailsViewModel.onWillShowVillainDetails(villain)
+        presenter.pushViewController(avengerDetailsViewController, animated: true)
+        
+        avengerDetailsViewModel.onPowerWasUpdated = {[weak self] in
+            guard let self = self else { return }
+            self.villainsViewModel?.onPowerWasUpdated()
+        }
+    }
+}
+
+// Avengers detail view model communication
+extension VillainsCoordinator: AvengerDetailsCoordinatorDelegate {
     
 }

@@ -23,6 +23,10 @@ class DataProvider {
         localDataProvider?.persist()
     }
     
+    func deleteAll() {
+        localDataProvider?.deleteAll()
+    }
+    
     // MARK: - Heroes persistance
     func createHeroe() -> Heroe? {
         return localDataProvider?.createHeroe()

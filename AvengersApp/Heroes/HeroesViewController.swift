@@ -35,8 +35,20 @@ class HeroesViewController: UIViewController {
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        print("Before")
+//        viewModel.showAllHeroes()
+//        print("\n\n")
+//        viewModel.deleteAll()
+//        print("Before\n\n\n")
+        
         setupUI()
         viewModel.viewDidLoad()
+        
+        print("After")
+        viewModel.showAllHeroes()
+        print("\n\n")
+        print("After")
     }
     
     // MARK: - Private methods
@@ -53,13 +65,16 @@ class HeroesViewController: UIViewController {
         ])
     }
     
-    
+    fileprivate func updateUI() {
+        tableView.reloadData()
+    }
     
 }
 
 // MARK: - Tableview methods
 extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -85,5 +100,7 @@ extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - View model communication
 extension HeroesViewController: HeroesViewDelegate {
-    
+    func onHeroePowerWasUpdated() {
+        updateUI()
+    }
 }
