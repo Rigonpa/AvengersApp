@@ -21,8 +21,8 @@
         <relationship name="combats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Combat" inverseName="villain" inverseEntity="Combat"/>
     </entity>
     <elements>
+        <element name="Combat" positionX="47.51953125" positionY="203.8515625" width="128" height="103"/>
         <element name="Heroe" positionX="-401.078125" positionY="-162.94921875" width="128" height="118"/>
         <element name="Villain" positionX="352.4375" positionY="-135.53515625" width="128" height="118"/>
-        <element name="Combat" positionX="47.51953125" positionY="203.8515625" width="128" height="103"/>
     </elements>
 </model>

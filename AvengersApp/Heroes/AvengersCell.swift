@@ -15,6 +15,21 @@ class AvengersCell: UITableViewCell {
     static let avengersAppFont = "Rockwell-Bold"
     
     // MARK: - Public properties
+    
+    lazy var fightButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        guard let image = UIImage(named: "ic_tab_battles")?.withRenderingMode(.alwaysTemplate) else { fatalError() }
+        btn.setImage(image, for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFit
+        btn.contentVerticalAlignment = .fill
+        btn.contentHorizontalAlignment = .fill
+        btn.addTarget(self, action: #selector(handleAvengerSelectedToFight), for: .touchUpInside)
+        btn.isHidden = true
+        btn.tintColor = #colorLiteral(red: 0.1956750751, green: 0.285889715, blue: 0.4968746305, alpha: 1)
+        return btn
+    }()
+    
     lazy var powerImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -68,10 +83,16 @@ class AvengersCell: UITableViewCell {
         }
     }
     // MARK: - Private methods
+    
+    @objc private func handleAvengerSelectedToFight() {
+        
+    }
+    
     private func setupCellUI() {
         contentView.addSubview(avengerImageView)
         contentView.addSubview(avengerNameLabel)
         contentView.addSubview(powerImageView)
+        contentView.addSubview(fightButton)
         
         NSLayoutConstraint.activate([
             avengerImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
@@ -92,6 +113,13 @@ class AvengersCell: UITableViewCell {
             powerImageView.topAnchor.constraint(equalTo: avengerNameLabel.bottomAnchor, constant: 3),
             powerImageView.widthAnchor.constraint(equalToConstant: 200),
             powerImageView.heightAnchor.constraint(equalToConstant: 15)
+        ])
+        
+        NSLayoutConstraint.activate([
+            fightButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            fightButton.centerYAnchor.constraint(equalTo: avengerImageView.centerYAnchor),
+            fightButton.widthAnchor.constraint(equalToConstant: 30),
+            fightButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     

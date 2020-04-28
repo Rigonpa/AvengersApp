@@ -45,10 +45,10 @@ class VillainsViewController: UIViewController {
         setupUI()
         viewModel.viewDidLoad()
         
-        print("After")
-        print("\n\n")
-        viewModel.showAllVillains()
-        print("After")
+//        print("After")
+//        print("\n\n")
+//        viewModel.showAllVillains()
+//        print("After")
     }
     
     // MARK: - Private methods

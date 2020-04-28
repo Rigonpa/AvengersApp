@@ -107,6 +107,66 @@ final class CoreDataDatabase: LocalDataProvider {
         try? context.save()
     }
     
+    // MARK: - Initial combats
+    
+    func provideInitialCombatsData() -> [Combat]? {
+        var initialCombats = [Combat]()
+        
+        guard let heroes = fetchHeroes(), let villains = fetchVillains() else { return nil }
+        
+        // Combat 1
+        guard let combat1 = createCombat() else { return nil }
+        let heroeCombat1 = heroes.filter{ $0.name == "America Captain" }
+        let villainComba1 = villains.filter{ $0.name == "Ivan Vanko" }
+        combat1.combat_id = 1
+        combat1.heroe = heroeCombat1[0]
+        combat1.villain = villainComba1[0]
+        combat1.winner = heroeCombat1[0].name
+        initialCombats.append(combat1)
+        
+        // Combat 2
+        guard let combat2 = createCombat() else { return nil }
+        let heroeCombat2 = heroes.filter{ $0.name == "Gamora" }
+        let villainComba2 = villains.filter{ $0.name == "Malekith" }
+        combat2.combat_id = 2
+        combat2.heroe = heroeCombat2[0]
+        combat2.villain = villainComba2[0]
+        combat2.winner = heroeCombat2[0].name
+        initialCombats.append(combat2)
+        
+        // Combat 3
+        guard let combat3 = createCombat() else { return nil }
+        let heroeCombat3 = heroes.filter{ $0.name == "Black Widow" }
+        let villainComba3 = villains.filter{ $0.name == "Ultron" }
+        combat3.combat_id = 3
+        combat3.heroe = heroeCombat3[0]
+        combat3.villain = villainComba3[0]
+        combat3.winner = heroeCombat3[0].name
+        initialCombats.append(combat3)
+        
+        // Combat 4
+        guard let combat4 = createCombat() else { return nil }
+        let heroeCombat4 = heroes.filter{ $0.name == "Hulk" }
+        let villainComba4 = villains.filter{ $0.name == "Red Skull" }
+        combat4.combat_id = 4
+        combat4.heroe = heroeCombat4[0]
+        combat4.villain = villainComba4[0]
+        combat4.winner = heroeCombat4[0].name
+        initialCombats.append(combat4)
+        
+        // Combat 5
+        guard let combat5 = createCombat() else { return nil }
+        let heroeCombat5 = heroes.filter{ $0.name == "Thor" }
+        let villainComba5 = villains.filter{ $0.name == "Thanos" }
+        combat5.combat_id = 5
+        combat5.heroe = heroeCombat5[0]
+        combat5.villain = villainComba5[0]
+        combat5.winner = heroeCombat5[0].name
+        initialCombats.append(combat5)
+        
+        return initialCombats
+    }
+    
     // MARK: - Initial characters
     
     func provideInitialHeroesData() -> [Heroe]? {
@@ -195,7 +255,7 @@ final class CoreDataDatabase: LocalDataProvider {
         return initialHeroes
     }
     
-    func provideIntialVillainsData() -> [Villain]? {
+    func provideInitialVillainsData() -> [Villain]? {
         var initialVillains: [Villain] = []
         
         // Villain 1 "Yon Rogg"

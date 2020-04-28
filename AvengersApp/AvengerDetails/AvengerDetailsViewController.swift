@@ -20,7 +20,7 @@ class AvengerDetailsViewController: UIViewController {
         table.isScrollEnabled = false
         table.register(ImageCell.self, forCellReuseIdentifier: ImageCell.cellIndentifier)
         table.register(PowerCell.self, forCellReuseIdentifier: PowerCell.cellIndentifier)
-        table.register(CombatsCell.self, forCellReuseIdentifier: CombatsCell.cellIndentifier)
+        table.register(CombatsTrackCell.self, forCellReuseIdentifier: CombatsTrackCell.cellIndentifier)
         table.register(DescriptionCell.self, forCellReuseIdentifier: DescriptionCell.cellIndentifier)
         table.separatorStyle = .none
         table.backgroundColor = #colorLiteral(red: 0.9626390338, green: 0.9626776576, blue: 0.9913365245, alpha: 1)
@@ -103,7 +103,7 @@ extension AvengerDetailsViewController: UITableViewDelegate, UITableViewDataSour
         // CombatsCell
         case 2:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: CombatsCell.cellIndentifier, for: indexPath) as? CombatsCell else { fatalError() }
+                withIdentifier: CombatsTrackCell.cellIndentifier, for: indexPath) as? CombatsTrackCell else { fatalError() }
             cell.viewModel = cellViewModel
             return cell
             

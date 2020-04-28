@@ -45,10 +45,10 @@ class HeroesViewController: UIViewController {
         setupUI()
         viewModel.viewDidLoad()
         
-        print("After")
-        viewModel.showAllHeroes()
-        print("\n\n")
-        print("After")
+//        print("After")
+//        viewModel.showAllHeroes()
+//        print("\n\n")
+//        print("After")
     }
     
     // MARK: - Private methods

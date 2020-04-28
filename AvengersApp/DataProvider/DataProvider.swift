@@ -73,6 +73,10 @@ class DataProvider {
     }
     
     func provideInitialVillains() -> [Villain]? {
-        localDataProvider?.provideIntialVillainsData()
+        localDataProvider?.provideInitialVillainsData()
+    }
+    
+    func provideInicialCombats() -> [Combat]? {
+        return localDataProvider?.provideInitialCombatsData()
     }
 }

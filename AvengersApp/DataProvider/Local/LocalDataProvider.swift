@@ -23,10 +23,11 @@ protocol LocalDataProvider {
     func createCombat() -> Combat?
     func fetchCombats() -> [Combat]?
     func deleteCombat(with: Int16)
+    func provideInitialCombatsData() -> [Combat]?
 
     // Villains
     func createVillain() -> Villain?
     func fetchVillains() -> [Villain]?
     func deleteVillain(with: String)
-    func provideIntialVillainsData() -> [Villain]?
+    func provideInitialVillainsData() -> [Villain]?
 }

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CombatsCell: UITableViewCell {
+class CombatsTrackCell: UITableViewCell {
     
-    static let cellIndentifier: String = String(describing: CombatsCell.self)
+    static let cellIndentifier: String = String(describing: CombatsTrackCell.self)
     
     var viewModel: AvengerDetailsCellViewModel? {
         didSet {
