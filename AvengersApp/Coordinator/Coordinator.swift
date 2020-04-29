@@ -19,6 +19,10 @@ class Coordinator {
         preconditionFailure("This function must be overriden by a subclass")
     }
     
+    func presentModule() {
+        preconditionFailure("This function must be overriden by a subclass")
+    }
+    
     func addChildCoordinator(coordinator: Coordinator){
         childCoordinators.append(coordinator)
     }

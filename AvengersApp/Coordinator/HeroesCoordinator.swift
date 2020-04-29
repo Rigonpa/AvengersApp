@@ -10,8 +10,12 @@ import UIKit
 
 class HeroesCoordinator: Coordinator {
     
+    var onHeroeChosenBlock: (() -> Void)?
+    
     let presenter: UINavigationController
     let dataProvider: DataProvider
+    
+//    var chooseHeroeNavigationController: UINavigationController?
     
     var heroesViewModel: HeroesViewModel?
     
@@ -32,13 +36,39 @@ class HeroesCoordinator: Coordinator {
     }
     
     override func finish() {
+        presenter.dismiss(animated: true, completion: nil)
+    }
+    
+    override func presentModule() {
+        let heroesViewModel = HeroesViewModel(dataProvider: dataProvider)
+        let heroesViewController = HeroesViewController(viewModel: heroesViewModel)
         
+        heroesViewController.title = "Select heroe for combat"
+        
+        heroesViewModel.coordinatorDelegate = self
+        heroesViewModel.viewDelegate = heroesViewController
+        self.heroesViewModel = heroesViewModel // ****** THE MOST IMPORTANT STEP I ALWAYS FORGET ******
+        
+        UserDefaults.standard.set(true, forKey: "Presenting heroe module")
+        
+//        let navigationController = UINavigationController(rootViewController: heroesViewController)
+//        self.chooseHeroeNavigationController = navigationController
+//        navigationController.modalPresentationStyle = .fullScreen
+//        presenter.present(navigationController, animated: true, completion: nil)
+
+        heroesViewController.modalPresentationStyle = .fullScreen
+        presenter.present(heroesViewController, animated: true, completion: nil)
+
     }
     
 }
 
-// View model communications
+// MARK: - View model communications
 extension HeroesCoordinator: HeroesCoordinatorDelegate {
+    func onHeroeWasAssignedToCombat() {()
+        onHeroeChosenBlock?()
+    }
+    
     func onDetailRequestedFor(_ heroe: Heroe) {
         let avengerDetailsViewModel = AvengerDetailsViewModel(dataProvider: dataProvider)
         let avengerDetailsViewController = AvengerDetailsViewController(viewModel: avengerDetailsViewModel)

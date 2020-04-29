@@ -9,6 +9,12 @@
 import Foundation
 
 extension HeroesViewModel {
+    
+    func showAllCombats() {
+        let combats = dataProvider.loadCombats()!
+        print(combats.description)
+    }
+    
     func showAllHeroes() {
         let heroes = dataProvider.loadHeroes()!
         print(heroes.description)
@@ -24,6 +30,12 @@ extension HeroesViewModel {
 }
 
 extension VillainsViewModel {
+    
+    func showAllCombats() {
+        let combats = dataProvider.loadCombats()!
+        print(combats.description)
+    }
+    
 //    func showAllHeroes() {
 //        print(dataProvider.loadHeroes()!)
 //    }
@@ -39,6 +51,12 @@ extension VillainsViewModel {
 }
 
 extension AvengerDetailsViewModel {
+    
+    func showAllCombats() {
+        let combats = dataProvider.loadCombats()!
+        print(combats.description)
+    }
+    
     func showAllHeroes() {
         let heroes = dataProvider.loadHeroes()!
         print(heroes.description)
@@ -47,6 +65,17 @@ extension AvengerDetailsViewModel {
     func showAllVillains() {
         let villains = dataProvider.loadVillains()!
         print(villains.description)
+    }
+    
+    func deleteAll() {
+        dataProvider.deleteAll()
+    }
+}
+
+extension CombatsViewModel {
+    func showAllCombats() {
+        let combats = dataProvider.loadCombats()!
+        print(combats.description)
     }
     
     func deleteAll() {

@@ -52,7 +52,7 @@ class CombatsCell: UITableViewCell {
     lazy var combatLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Combat #"
+        label.isHidden = false
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 0.1956750751, green: 0.285889715, blue: 0.4968746305, alpha: 1)
         label.font = UIFont(name: AvengersCell.avengersAppFont, size: 18)
@@ -90,6 +90,7 @@ class CombatsCell: UITableViewCell {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
+        iv.isHidden = true
         iv.layer.borderWidth = 1
         iv.layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
         iv.layer.cornerRadius = 10
@@ -101,6 +102,7 @@ class CombatsCell: UITableViewCell {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
+        iv.isHidden = true
         iv.layer.borderWidth = 1
         iv.layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
         iv.layer.cornerRadius = 10
@@ -130,7 +132,7 @@ class CombatsCell: UITableViewCell {
         btn.layer.cornerRadius = 10
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
-        btn.addTarget(self, action: #selector(handleVillainWillBeSelected), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(handleChooseVillain), for: .touchUpInside)
         btn.backgroundColor = #colorLiteral(red: 0.8015423417, green: 0.5596194863, blue: 0.5582501888, alpha: 1)
         return btn
     }()
@@ -153,26 +155,61 @@ class CombatsCell: UITableViewCell {
         ])
         
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.isHidden = true
+        btn.isHidden = false
         btn.layer.cornerRadius = 10
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
-        btn.addTarget(self, action: #selector(handleHeroeWillBeSelected), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(handleChooseHeroe), for: .touchUpInside)
         btn.backgroundColor = #colorLiteral(red: 0.8015423417, green: 0.5596194863, blue: 0.5582501888, alpha: 1)
         return btn
     }()
     
     var viewModel: CombatsCellViewModel? {
         didSet {
-            guard let viewModel = viewModel,
-                let heroeImageName = viewModel.combat.heroe?.profile_image,
-                let heroeImage = UIImage(named: heroeImageName),
-                let villainImageName = viewModel.combat.villain?.profile_image,
-                let villainImage = UIImage(named: villainImageName) else { return }
+            guard let viewModel = viewModel else { return }
             
-            heroeImageView.image = heroeImage
-            villainImageView.image = villainImage
+            if viewModel.combat.heroe != nil {
+                guard let heroeImageName = viewModel.combat.heroe?.profile_image else { return }
+                let heroeImage = UIImage(named: heroeImageName)
+                heroeImageView.image = heroeImage
+                
+                withoutHeroeImageView.isHidden = true
+                heroeImageView.isHidden = false
+                withoutVillainImageView.isHidden = false
+            }
+            
+            if viewModel.combat.villain != nil {
+                guard let villainImageName = viewModel.combat.villain?.profile_image else { return }
+                let villainImage = UIImage(named: villainImageName)
+                villainImageView.image = villainImage
+                
+                withoutVillainImageView.isHidden = true
+                villainImageView.isHidden = false
+                fightButton.isHidden = false
+            }
+            
+            combatLabel.text = "Combat #\(viewModel.combat.combat_id)"
             setupUI()
+            
+            
+            
+            
+            
+//            // Showing heroe, or villain or heroe and villain images
+//            guard let viewModel = viewModel,
+//                let heroeImageName = viewModel.combat.heroe?.profile_image,
+//                let heroeImage = UIImage(named: heroeImageName),
+//                let villainImageName = viewModel.combat.villain?.profile_image,
+//                let villainImage = UIImage(named: villainImageName) else {
+//
+//                    // When combat is new and has no heroe or villain
+//                    setupUI()
+//                    return
+//
+//            }
+//            heroeImageView.image = heroeImage
+//            villainImageView.image = villainImage
+//            setupUI()
         }
     }
     
@@ -231,7 +268,7 @@ class CombatsCell: UITableViewCell {
         NSLayoutConstraint.activate([
             combatLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             combatLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            combatLabel.widthAnchor.constraint(equalToConstant: 100),
+            combatLabel.widthAnchor.constraint(equalToConstant: 200),
             combatLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
         
@@ -269,11 +306,11 @@ class CombatsCell: UITableViewCell {
         
     }
     
-    @objc private func handleHeroeWillBeSelected() {
-        
+    @objc private func handleChooseHeroe() {
+        viewModel?.onWillChooseHeroe()
     }
     
-    @objc private func handleVillainWillBeSelected() {
-        
+    @objc private func handleChooseVillain() {
+        viewModel?.onWillChooseVillain()
     }
 }

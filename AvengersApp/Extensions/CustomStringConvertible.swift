@@ -19,3 +19,9 @@ extension Villain {
         return "\n\n Villain name: \(name!)\n Power: \(power)\n Profile image name: \(profile_image!)"
     }
 }
+
+extension Combat {
+    public override var description: String {
+        return "\n\n Combat number: \(combat_id)\n Heroe: \(heroe?.name ?? "")\n Villain: \(villain?.name ?? "")\n Combat winner: \(winner ?? "")"
+    }
+}

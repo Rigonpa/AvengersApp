@@ -82,13 +82,28 @@ class AvengersCell: UITableViewCell {
             setupCellUI()
         }
     }
-    // MARK: - Private methods
     
+    var choosingAvenger: Bool = false
+    
+    // MARK: - Private methods
     @objc private func handleAvengerSelectedToFight() {
-        
+        if let heroeSelected = heroesViewModel?.heroe {
+            heroesViewModel?.heroeForFightSelected(heroe: heroeSelected)
+        } else if let villainSelected = villainsViewModel?.villain {
+            villainsViewModel?.villainForFightSelected(villain: villainSelected)
+        }
     }
     
     private func setupCellUI() {
+        
+        if UserDefaults.standard.bool(forKey: "Presenting heroe module") {
+            fightButton.isHidden = false
+        }
+        
+        if UserDefaults.standard.bool(forKey: "Presenting villain module") {
+            fightButton.isHidden = false
+        }
+
         contentView.addSubview(avengerImageView)
         contentView.addSubview(avengerNameLabel)
         contentView.addSubview(powerImageView)

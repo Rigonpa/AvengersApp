@@ -10,6 +10,8 @@ import UIKit
 
 class VillainsCoordinator: Coordinator {
     
+    var onVillainChosenBlock: (() -> Void)?
+    
     let presenter: UINavigationController
     let dataProvider: DataProvider
     
@@ -32,12 +34,29 @@ class VillainsCoordinator: Coordinator {
     }
     
     override func finish() {
+        presenter.dismiss(animated: true, completion: nil)
+    }
+    
+    override func presentModule() {
+        let villainsViewModel = VillainsViewModel(dataProvider: dataProvider)
+        let villainsViewController = VillainsViewController(viewModel: villainsViewModel)
         
+        villainsViewModel.coordinatorDelegate = self
+        villainsViewModel.viewDelegate = villainsViewController
+        self.villainsViewModel = villainsViewModel // ****** THE MOST IMPORTANT STEP I ALWAYS FORGET ******
+        
+        UserDefaults.standard.set(true, forKey: "Presenting villain module")
+        villainsViewController.modalPresentationStyle = .fullScreen
+        presenter.present(villainsViewController, animated: true, completion: nil)
     }
 }
 
 // View model communication
 extension VillainsCoordinator: VillainsCoordinatorDelegate {
+    func onVillainWasAssignedToCombat() {
+        onVillainChosenBlock?()
+    }
+    
     func onDetailRequestedFor(_ villain: Villain) {
         let avengerDetailsViewModel = AvengerDetailsViewModel(dataProvider: dataProvider)
         let avengerDetailsViewController = AvengerDetailsViewController(viewModel: avengerDetailsViewModel)

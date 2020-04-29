@@ -45,6 +45,8 @@ class HeroesViewController: UIViewController {
         setupUI()
         viewModel.viewDidLoad()
         
+//        viewModel.showAllCombats()
+        
 //        print("After")
 //        viewModel.showAllHeroes()
 //        print("\n\n")

@@ -3,4 +3,370 @@
    uuid = "F356F15E-39F7-405F-909C-BB9994E6513D"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5FF48F97-49F4-490C-BABC-63F964718F49"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Combats/CombatsCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "viewModel"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DCFD8D9F-3EEE-497A-BF7C-04516D2D2123"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Heroes/AvengersCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "handleAvengerSelectedToFight()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B14A967B-D95F-4941-9529-A25A7B844E54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Heroes/HeroesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "heroeForFightSelected(heroe:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B14A967B-D95F-4941-9529-A25A7B844E54 - b510dc0df6548fc4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.HeroesViewModel.heroeForFightSelected(heroe: AvengersApp.Heroe) -&gt; ()"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/HeroesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "410">
+               </Location>
+               <Location
+                  uuid = "B14A967B-D95F-4941-9529-A25A7B844E54 - 76f968804f66fdfc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (AvengersApp.Combat) -&gt; Swift.Bool in AvengersApp.HeroesViewModel.heroeForFightSelected(heroe: AvengersApp.Heroe) -&gt; ()"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/HeroesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7858FF72-5161-43DD-B3AD-153B363A06BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Heroes/HeroesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "heroeForFightSelected(heroe:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "984CE445-E660-439A-88F3-2769DAAEDDFA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Heroes/HeroesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "heroeForFightSelected(heroe:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB250618-0728-40A6-9FA8-6C544A160374"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Heroes/HeroesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "heroeForFightSelected(heroe:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59A3E9D3-7351-40E3-B239-9C65FD37DE50"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Combats/CombatsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "onAvengerWasAssignedToCombat()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15FA016A-2481-4A3D-B166-159EFDF88F7D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Heroes/AvengersCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "heroesViewModel"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "15FA016A-2481-4A3D-B166-159EFDF88F7D - deff7f8a056a69f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.AvengersCell.heroesViewModel.modify : Swift.Optional&lt;AvengersApp.HeroesCellViewModel&gt;"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/AvengersCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "15FA016A-2481-4A3D-B166-159EFDF88F7D - 965ceea78cbf29e9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.AvengersCell.heroesViewModel.modify : Swift.Optional&lt;AvengersApp.HeroesCellViewModel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/AvengersCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "15FA016A-2481-4A3D-B166-159EFDF88F7D - 31c23a6930561e0e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.AvengersCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; AvengersApp.AvengersCell"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/AvengersCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "504">
+               </Location>
+               <Location
+                  uuid = "15FA016A-2481-4A3D-B166-159EFDF88F7D - 7aa483c823f9ab08"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.AvengersCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;AvengersApp.AvengersCell&gt;"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/AvengersCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "435">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3AEC046-26D6-40A1-B01D-2A0D9F14CC3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Heroes/AvengersCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "villainsViewModel"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A3AEC046-26D6-40A1-B01D-2A0D9F14CC3B - 49487de28e883241"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.AvengersCell.villainsViewModel.modify : Swift.Optional&lt;AvengersApp.VillainsCellViewModel&gt;"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/AvengersCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "A3AEC046-26D6-40A1-B01D-2A0D9F14CC3B - f1c3da5256fba751"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.AvengersCell.villainsViewModel.modify : Swift.Optional&lt;AvengersApp.VillainsCellViewModel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/AvengersCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "A3AEC046-26D6-40A1-B01D-2A0D9F14CC3B - 31c23a6930561e0e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.AvengersCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; AvengersApp.AvengersCell"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/AvengersCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "590">
+               </Location>
+               <Location
+                  uuid = "A3AEC046-26D6-40A1-B01D-2A0D9F14CC3B - 7aa483c823f9ab08"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AvengersApp.AvengersCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;AvengersApp.AvengersCell&gt;"
+                  moduleName = "AvengersApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardogonzalezpacheco/Documents/KC/05.%20Persistencia,%20optimizacio%CC%81n,%20instrumentacio%CC%81n/Mi%20pra%CC%81ctica/AvengersApp/AvengersApp/AvengersApp/Heroes/AvengersCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "521">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47E2CA05-F72D-4437-AD66-7A397F0F14B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Combats/CombatsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27EF8A17-5597-48E4-AAED-8243217E6017"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Combats/CombatsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05D7A4D8-0613-47DB-9207-27B9C538EB25"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Combats/CombatsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8568727-8E9F-4971-85AA-91A644ECAA82"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AvengersApp/Combats/CombatsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

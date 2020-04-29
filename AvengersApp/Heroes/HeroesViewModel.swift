@@ -10,6 +10,7 @@ import Foundation
 
 protocol HeroesCoordinatorDelegate {
     func onDetailRequestedFor(_ heroe: Heroe)
+    func onHeroeWasAssignedToCombat()
 }
 
 protocol HeroesViewDelegate {
@@ -44,10 +45,11 @@ class HeroesViewModel {
             heroes = initialHeroes
             dataProvider.saveAvengerUpdates()
         }
-        
+//        guard let heroesToShow = heroes else { return }
         for each in 0...heroes!.count - 1 {
-            heroeViewModels.append(HeroesCellViewModel(heroe: heroes![each]))
-//            each.viewModelDelegate = self
+            let heroeCellViewModel = HeroesCellViewModel(heroe: heroes![each])
+            heroeCellViewModel.viewModelDelegate = self // ****** THE MOST IMPORTANT STEP I ALWAYS FORGET ******
+            heroeViewModels.append(heroeCellViewModel)
         }
     }
     
@@ -69,8 +71,26 @@ class HeroesViewModel {
         heroeViewModels = []
         guard let heroesSaved = dataProvider.loadHeroes() else { return }
         for each in 0...heroesSaved.count - 1 {
-            heroeViewModels.append(HeroesCellViewModel(heroe: heroesSaved[each]))
+            let heroeCellViewModel = HeroesCellViewModel(heroe: heroesSaved[each])
+            heroeViewModels.append(heroeCellViewModel)
         }
         viewDelegate?.onHeroePowerWasUpdated()
+    }
+}
+
+// MARK: - Heroes cell view model communication
+extension HeroesViewModel: HeroesViewModelDelegate {
+    
+    func heroeForFightSelected(heroe: Heroe) {
+        guard let combats = dataProvider.loadCombats() else { return }
+        print("Please\n\n")
+        showAllCombats()
+        
+        let combat = combats.filter{ $0.heroe == nil }
+        
+        combat[0].heroe = heroe
+        dataProvider.saveAvengerUpdates()
+        showAllCombats()
+        coordinatorDelegate?.onHeroeWasAssignedToCombat()
     }
 }

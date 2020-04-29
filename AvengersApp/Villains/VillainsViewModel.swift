@@ -10,6 +10,7 @@ import Foundation
 
 protocol VillainsCoordinatorDelegate {
     func onDetailRequestedFor(_ villain: Villain)
+    func onVillainWasAssignedToCombat()
 }
 
 protocol VillainsViewDelegate {
@@ -45,8 +46,9 @@ class VillainsViewModel {
         }
         
         for each in 0...villains!.count - 1 {
-            villainViewModels.append(VillainsCellViewModel(villain: villains![each]))
-//            each.viewModelDelegate = self
+            let villainViewModel = VillainsCellViewModel(villain: villains![each])
+            villainViewModels.append(villainViewModel)
+            villainViewModel.viewModelDelegate = self
         }
     }
     
@@ -71,5 +73,17 @@ class VillainsViewModel {
             villainViewModels.append(VillainsCellViewModel(villain: villainsSaved[each]))
         }
         viewDelegate?.onVillainPowerWasUpdated()
+    }
+}
+
+// MARK: - Cell view model communication
+extension VillainsViewModel: VillainsViewModelDelegate {
+    func villainForFightSelected(villain: Villain) {
+        guard let combats = dataProvider.loadCombats() else { return }
+        let combat = combats.filter{ $0.villain == nil }
+        combat[0].villain = villain
+        dataProvider.saveAvengerUpdates()
+        
+        coordinatorDelegate?.onVillainWasAssignedToCombat()
     }
 }

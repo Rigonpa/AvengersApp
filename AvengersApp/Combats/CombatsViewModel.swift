@@ -9,11 +9,12 @@
 import Foundation
 
 protocol CombatsCoordinatorDelegate {
-    
+    func onChoosingHeroe()
+    func onChoosingVillain()
 }
 
 protocol CombatsViewDelegate {
-    
+    func onshowingCombatsUpdates()
 }
 
 class CombatsViewModel {
@@ -29,12 +30,45 @@ class CombatsViewModel {
         self.dataProvider = dataProvider
     }
     
-    func viewDidLoad() {
-//        guard let combats = dataProvider.loadCombats() else { return }
-        guard let combats = dataProvider.provideInicialCombats() else { return }
+    func fetchCombats() {
+        combatViewModels = [] // Important so that cells do not duplicate
+        guard let combats = dataProvider.loadCombats(), !combats.isEmpty else { return }
+//        guard let combats = dataProvider.provideInicialCombats() else { return }
         for each in 0...combats.count - 1 {
-            combatViewModels.append(CombatsCellViewModel(combat: combats[each]))
+            let combatCellViewModel = CombatsCellViewModel(combat: combats[each])
+            combatCellViewModel.combat.combat_id = Int16(each + 1)
+            combatCellViewModel.viewModelDelegate = self // I have again forgotten to assign view model delegate to myself
+            combatViewModels.append(combatCellViewModel)
         }
+        viewDelegate?.onshowingCombatsUpdates()
+    }
+    
+    // MARK: - Public methods
+    func onAvengerWasAssignedToCombat() {
+        fetchCombats()
+        showAllCombats()
+    }
+    
+    func onNewCombatRequested() {
+        guard let newCombat = dataProvider.createCombat() else { return }
+//        newCombat.combat_id = Int16(combatViewModels.count + 1)
+        dataProvider.saveAvengerUpdates()
+        fetchCombats()
+        showAllCombats()
+    }
+    
+    func newCombatButtonEnabled() -> Bool {
+        var enabled = false
+        if !combatViewModels.isEmpty {
+            for one in 0...combatViewModels.count - 1 {
+                if combatViewModels[one].combat.winner != nil {
+                    enabled = true
+                }
+            }
+        } else {
+            enabled = true
+        }
+        return enabled
     }
     
     // MARK: - Tableview methods
@@ -45,5 +79,16 @@ class CombatsViewModel {
     func oneCombatViewModel(_ index: IndexPath) -> CombatsCellViewModel? {
         let oneCombatViewModel = combatViewModels[index.row]
         return oneCombatViewModel
+    }
+}
+
+// Combat cell view model communication
+extension CombatsViewModel: CombatViewModelDelegate {
+    func onChoosingVillain() {
+        coordinatorDelegate?.onChoosingVillain()
+    }
+    
+    func onChoosingHeroe() {
+        coordinatorDelegate?.onChoosingHeroe()
     }
 }

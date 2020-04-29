@@ -9,22 +9,24 @@
 import Foundation
 
 protocol HeroesViewModelDelegate {
-    
+    func heroeForFightSelected(heroe: Heroe)
 }
 
-protocol HeroesCellViewDelegate {
+protocol HeroesCellViewModelViewDelegate: class {
     
 }
 
 class HeroesCellViewModel {
     
     var viewModelDelegate: HeroesViewModelDelegate?
-    var viewDelegate: HeroesCellViewDelegate?
+    weak var viewDelegate: HeroesCellViewModelViewDelegate?
     
     let heroe: Heroe
     init(heroe: Heroe) {
         self.heroe = heroe
     }
     
-    
+    func heroeForFightSelected(heroe: Heroe) {
+        viewModelDelegate?.heroeForFightSelected(heroe: heroe)
+    }
 }

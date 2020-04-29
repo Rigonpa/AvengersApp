@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol VillainsViewModelDelegate {
-    
+    func villainForFightSelected(villain: Villain)
 }
 
 protocol VillainsCellViewDelegate {
@@ -28,4 +28,7 @@ class VillainsCellViewModel {
         self.villain = villain
     }
     
+    func villainForFightSelected(villain: Villain) {
+        viewModelDelegate?.villainForFightSelected(villain: villain)
+    }
 }

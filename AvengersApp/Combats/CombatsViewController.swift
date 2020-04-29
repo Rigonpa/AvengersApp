@@ -65,11 +65,29 @@ class CombatsViewController: UIViewController {
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        print("Before")
+//        viewModel.showAllCombats()
+//        print("\n\n")
+//        viewModel.deleteAll()
+//        print("Before\n\n\n")
+        
         setupUI()
-        viewModel.viewDidLoad()
+        viewModel.fetchCombats()
+        
+        print("After")
+        viewModel.showAllCombats()
+        print("\n\n")
+        print("After")
+    
     }
     
     // MARK: - Private methods
+    
+    private func updateUI() {
+        tableView.reloadData()
+    }
+    
     private func setupUI() {
         navigationItem.title = "Combats"
         view.backgroundColor = #colorLiteral(red: 0.77372998, green: 0.8594649434, blue: 0.9724978805, alpha: 1)
@@ -98,11 +116,14 @@ class CombatsViewController: UIViewController {
             addButton.widthAnchor.constraint(equalToConstant: 300),
             addButton.topAnchor.constraint(equalTo: tableView.bottomAnchor)
         ])
-        
     }
     
     @objc func handleAddCombat() {
-        print("blfiefponepfoj")
+        if viewModel.newCombatButtonEnabled() {
+            viewModel.onNewCombatRequested()
+        } else {
+            print("Busted")
+        }
     }
 }
 
@@ -136,8 +157,9 @@ extension CombatsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
 // MARK: - View model communication
 extension CombatsViewController: CombatsViewDelegate {
-    
+    func onshowingCombatsUpdates() {
+        updateUI()
+    }
 }
