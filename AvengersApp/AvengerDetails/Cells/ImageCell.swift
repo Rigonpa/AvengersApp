@@ -45,7 +45,7 @@ class ImageCell: UITableViewCell {
         contentView.backgroundColor = #colorLiteral(red: 0.9626390338, green: 0.9626776576, blue: 0.9913365245, alpha: 1)
         NSLayoutConstraint.activate([
             avengerImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            avengerImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+            avengerImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 15),
             avengerImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             avengerImageView.heightAnchor.constraint(equalToConstant: 210)
         ])

@@ -25,7 +25,7 @@ class CombatsCell: UITableViewCell {
         let image = UIImage(systemName: "hand.thumbsdown.fill")
         let iv = UIImageView(image: image)
         iv.isHidden = true
-        iv.tintColor = .red
+        iv.tintColor = #colorLiteral(red: 0.5712776184, green: 0.1726597846, blue: 0.2487661541, alpha: 1)
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.isUserInteractionEnabled = true
         return iv
@@ -44,7 +44,7 @@ class CombatsCell: UITableViewCell {
         let image = UIImage(systemName: "hand.thumbsdown.fill")
         let iv = UIImageView(image: image)
         iv.isHidden = true
-        iv.tintColor = .red
+        iv.tintColor = #colorLiteral(red: 0.5712776184, green: 0.1726597846, blue: 0.2487661541, alpha: 1)
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -319,7 +319,7 @@ class CombatsCell: UITableViewCell {
         ])
 
         NSLayoutConstraint.activate([
-            heroeLoserImageView.trailingAnchor.constraint(equalTo: heroeImageView.trailingAnchor, constant: -4),
+            heroeLoserImageView.leadingAnchor.constraint(equalTo: heroeImageView.leadingAnchor, constant: 4),
             heroeLoserImageView.topAnchor.constraint(equalTo: heroeImageView.topAnchor, constant: 4),
             heroeLoserImageView.widthAnchor.constraint(equalToConstant: 30),
             heroeLoserImageView.heightAnchor.constraint(equalToConstant: 30)
@@ -333,7 +333,7 @@ class CombatsCell: UITableViewCell {
         ])
 
         NSLayoutConstraint.activate([
-            villainLoserImageView.trailingAnchor.constraint(equalTo: villainImageView.trailingAnchor, constant: -4),
+            villainLoserImageView.leadingAnchor.constraint(equalTo: villainImageView.leadingAnchor, constant: 4),
             villainLoserImageView.topAnchor.constraint(equalTo: villainImageView.topAnchor, constant: 4),
             villainLoserImageView.widthAnchor.constraint(equalToConstant: 30),
             villainLoserImageView.heightAnchor.constraint(equalToConstant: 30)

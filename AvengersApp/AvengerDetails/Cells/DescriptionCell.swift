@@ -24,7 +24,7 @@ class DescriptionCell: UITableViewCell {
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.isEditable = false
         tv.isSelectable = false
-        tv.isScrollEnabled = false
+//        tv.isScrollEnabled = false
         tv.backgroundColor = #colorLiteral(red: 0.9626390338, green: 0.9626776576, blue: 0.9913365245, alpha: 1)
         tv.font = UIFont(name: AvengersCell.avengersAppFont, size: 13)
         tv.textColor = #colorLiteral(red: 0.02531321719, green: 0.4073432684, blue: 0.903057158, alpha: 0.6077769887)
@@ -49,7 +49,7 @@ class DescriptionCell: UITableViewCell {
     
     private func setupUI() {
         contentView.backgroundColor = #colorLiteral(red: 0.9626390338, green: 0.9626776576, blue: 0.9913365245, alpha: 1)
-        
+
         contentView.addSubview(biographyLabel)
         contentView.addSubview(biographyText)
         
@@ -64,7 +64,7 @@ class DescriptionCell: UITableViewCell {
             biographyText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 26),
             biographyText.topAnchor.constraint(equalTo: biographyLabel.bottomAnchor, constant: 10),
             biographyText.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            biographyText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            biographyText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
         ])
     }
 }

@@ -52,16 +52,16 @@ class AvengerDetailsViewModel {
         switch position.row {
             // ImageCell
             case 0:
-                return 260
+                return 250
             // PowerCell
             case 1:
-                return 50
+                return 60
             // CombatsCell
             case 2:
-                return 70
+                return 95
             // Description Cell
             default:
-                return 320
+                return 300
         }
     }
     
