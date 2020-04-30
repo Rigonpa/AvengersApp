@@ -12,10 +12,11 @@ class CombatsTrackCell: UITableViewCell {
     
     static let cellIndentifier: String = String(describing: CombatsTrackCell.self)
     
-    var combats: [String] = ["Combat 1", "Combat 2", "Combat 3", "Combat 4", "Combat 5",
-                             "Combat 6", "Combat 7", "Combat 8", "Combat 9", "Combat 10",
-                             "Combat 11", "Combat 12", "Combat 13", "Combat 14", "Combat 15",
-                             "Combat 16", "Combat 17", "Combat 18", "Combat 19", "Combat 20"]
+//    var emptyCombatsTrack: [String] = ["Combat 1", "Combat 2", "Combat 3", "Combat 4", "Combat 5",
+//                             "Combat 6", "Combat 7", "Combat 8", "Combat 9", "Combat 10",
+//                             "Combat 11", "Combat 12", "Combat 13", "Combat 14", "Combat 15",
+//                             "Combat 16", "Combat 17", "Combat 18", "Combat 19", "Combat 20"]
+    var combatsTrack = [Combat]()
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -29,8 +30,17 @@ class CombatsTrackCell: UITableViewCell {
     
     var viewModel: AvengerDetailsCellViewModel? {
         didSet {
+            combatsTrack = []
             guard let viewModel = viewModel else { return }
-            
+            if viewModel.heroe != nil {
+                // Combats track of a heroe
+                guard let heroeCombats = viewModel.heroe?.combats?.allObjects as? [Combat] else { return }
+                combatsTrack = heroeCombats
+            } else {
+                // Combats track of a villain
+                guard let villainCombats = viewModel.villain?.combats?.allObjects as? [Combat] else { return }
+                combatsTrack = villainCombats
+            }
             setupUI()
         }
     }
@@ -62,18 +72,59 @@ extension CombatsTrackCell: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return combats.count
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "CellId", for: indexPath) as? CombatsUnitaryCell else { fatalError()}
-//        item.combatLabel.text = combats[indexPath.item]
-        item.emptyCombatLabel.text = combats[indexPath.item]
-//        item.backgroundColor = .blue
+        if indexPath.item < combatsTrack.count {
+            // The combats where this avenger has been involved
+            item.combatLabel.isHidden = false
+            item.rivalLabel.isHidden = false
+            item.emptyCombatLabel.isHidden = true
+            item.emptyRivalLabel.isHidden = true
+            
+            let combatAnalyzed = combatsTrack[indexPath.item]
+            item.combatLabel.text = "Combat \(indexPath.item + 1)"
+            
+            if viewModel?.heroe != nil {
+                // Heroe combat analyzed
+                item.rivalLabel.text = combatAnalyzed.villain?.name
+                if combatAnalyzed.heroe?.name == combatAnalyzed.winner {
+                    // The heroe won the combat - Yellow bubble
+                    item.combatLabel.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                    item.combatLabel.textColor = .black
+                } else {
+                    // The heroe lost the combat - Red bubble
+                    item.combatLabel.backgroundColor = #colorLiteral(red: 0.5712776184, green: 0.1726597846, blue: 0.2487661541, alpha: 1)
+                    item.combatLabel.textColor = .white
+                }
+            } else {
+                // Villain combat analyzed
+                item.rivalLabel.text = combatAnalyzed.heroe?.name
+                if combatAnalyzed.villain?.name == combatAnalyzed.winner {
+                    // The villain won the combat - Yellow bubble
+                    item.combatLabel.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                    item.combatLabel.textColor = .black
+                } else {
+                    // The villain lost the combat - Red bubble
+                    item.combatLabel.backgroundColor = #colorLiteral(red: 0.5712776184, green: 0.1726597846, blue: 0.2487661541, alpha: 1)
+                    item.combatLabel.textColor = .white
+                }
+            }
+            
+        } else {
+            // The rest of combats until 20 where this avenger will be involved
+            item.combatLabel.isHidden = true
+            item.rivalLabel.isHidden = true
+            item.emptyCombatLabel.isHidden = false
+            item.emptyRivalLabel.isHidden = false
+            
+            item.emptyCombatLabel.text = "Combat \(indexPath.item + 1)"
+
+        }
         return item
     }
-    
-    
 }
 
 class CombatsUnitaryCell: UICollectionViewCell {
