@@ -16,18 +16,18 @@ protocol LocalDataProvider {
     // Heroes
     func createHeroe() -> Heroe?
     func fetchHeroes() -> [Heroe]?
-    func deleteHeroe(with: String)
+    func deleteHeroe(withName: String)
     func provideInitialHeroesData() -> [Heroe]?
 
     // Combats
     func createCombat() -> Combat?
     func fetchCombats() -> [Combat]?
-    func deleteCombat(with: Int16)
+    func deleteCombat(withId: Int16)
     func provideInitialCombatsData() -> [Combat]?
 
     // Villains
     func createVillain() -> Villain?
     func fetchVillains() -> [Villain]?
-    func deleteVillain(with: String)
+    func deleteVillain(withName: String)
     func provideInitialVillainsData() -> [Villain]?
 }

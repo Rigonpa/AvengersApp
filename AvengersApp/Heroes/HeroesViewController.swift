@@ -45,7 +45,7 @@ class HeroesViewController: UIViewController {
         setupUI()
         viewModel.viewDidLoad()
         
-//        viewModel.showAllCombats()
+        viewModel.showAllCombats()
         
 //        print("After")
 //        viewModel.showAllHeroes()
@@ -76,8 +76,10 @@ class HeroesViewController: UIViewController {
 // MARK: - Tableview methods
 extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectRow(indexPath)
-        tableView.deselectRow(at: indexPath, animated: true)
+        if !UserDefaults.standard.bool(forKey: "Presenting heroe module") {
+            viewModel.didSelectRow(indexPath)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

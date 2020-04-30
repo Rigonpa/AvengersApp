@@ -52,7 +52,7 @@ final class CoreDataDatabase: LocalDataProvider {
         return heroesData
     }
     
-    func deleteHeroe(with name: String) {
+    func deleteHeroe(withName name: String) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: heroeEntity)
         fetchRequest.predicate = NSPredicate(format: "name = %@", name)
         let heroeToDelete = try? context.fetch(fetchRequest)
@@ -75,7 +75,7 @@ final class CoreDataDatabase: LocalDataProvider {
         return combatsData
     }
     
-    func deleteCombat(with id: Int16) {
+    func deleteCombat(withId id: Int16) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: combatEntity)
         fetchRequest.predicate = NSPredicate(format: "combat_id = %i", id)
         let combatToDelete = try? context.fetch(fetchRequest)
@@ -98,7 +98,7 @@ final class CoreDataDatabase: LocalDataProvider {
         return villainsData
     }
     
-    func deleteVillain(with name: String) {
+    func deleteVillain(withName name: String) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: villainEntity)
         fetchRequest.predicate = NSPredicate(format: "name = %@", name)
         let villainToDelete = try? context.fetch(fetchRequest)

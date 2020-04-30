@@ -75,10 +75,10 @@ class CombatsViewController: UIViewController {
         setupUI()
         viewModel.fetchCombats()
         
-        print("After")
-        viewModel.showAllCombats()
-        print("\n\n")
-        print("After")
+//        print("After")
+//        viewModel.showAllCombats()
+//        print("\n\n")
+//        print("After")
     
     }
     
@@ -86,6 +86,8 @@ class CombatsViewController: UIViewController {
     
     private func updateUI() {
         tableView.reloadData()
+        let indexPath = IndexPath(item: viewModel.numberRows() - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
     private func setupUI() {
@@ -138,7 +140,7 @@ extension CombatsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
+        return 170
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -154,6 +156,11 @@ extension CombatsViewController: UITableViewDelegate, UITableViewDataSource {
             let cellViewModel = viewModel.oneCombatViewModel(indexPath) else { fatalError() }
         cell.viewModel = cellViewModel
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // This method allows me to drag in the task cell to the left and discover the red button "delete"
+        viewModel.deleteCombat(at: indexPath)
     }
 }
 

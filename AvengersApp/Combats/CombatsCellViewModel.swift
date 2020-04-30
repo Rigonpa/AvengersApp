@@ -11,6 +11,7 @@ import Foundation
 protocol CombatViewModelDelegate {
     func onChoosingHeroe()
     func onChoosingVillain()
+    func onStartingCombat()
 }
 
 protocol CombatViewDelegate {
@@ -33,5 +34,9 @@ class CombatsCellViewModel {
     
     func onWillChooseVillain() {
         viewModelDelegate?.onChoosingVillain()
+    }
+    
+    func onStartingCombat() {
+        viewModelDelegate?.onStartingCombat()
     }
 }

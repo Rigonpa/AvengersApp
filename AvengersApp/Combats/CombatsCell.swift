@@ -168,48 +168,87 @@ class CombatsCell: UITableViewCell {
         didSet {
             guard let viewModel = viewModel else { return }
             
+            // 1. New combat without heroe, villain or winner
+            if viewModel.combat.heroe == nil {
+                heroeWinnerImageView.isHidden = true
+                heroeLoserImageView.isHidden = true
+                villainWinnerImageView.isHidden = true
+                villainLoserImageView.isHidden = true
+                fightButton.isHidden = true
+                heroeImageView.isHidden = true
+                villainImageView.isHidden = true
+                withoutHeroeImageView.isHidden = false
+                withoutVillainImageView.isHidden = true
+            }
+            
+            // 2. Selecting heroe to combat
             if viewModel.combat.heroe != nil {
                 guard let heroeImageName = viewModel.combat.heroe?.profile_image else { return }
                 let heroeImage = UIImage(named: heroeImageName)
                 heroeImageView.image = heroeImage
                 
-                withoutHeroeImageView.isHidden = true
+                heroeWinnerImageView.isHidden = true
+                heroeLoserImageView.isHidden = true
+                villainWinnerImageView.isHidden = true
+                villainLoserImageView.isHidden = true
+                fightButton.isHidden = true
                 heroeImageView.isHidden = false
+                villainImageView.isHidden = true
+                withoutHeroeImageView.isHidden = true
                 withoutVillainImageView.isHidden = false
             }
             
+            // Selecting villain to combat
             if viewModel.combat.villain != nil {
                 guard let villainImageName = viewModel.combat.villain?.profile_image else { return }
                 let villainImage = UIImage(named: villainImageName)
                 villainImageView.image = villainImage
                 
-                withoutVillainImageView.isHidden = true
-                villainImageView.isHidden = false
+                heroeWinnerImageView.isHidden = true
+                heroeLoserImageView.isHidden = true
+                villainWinnerImageView.isHidden = true
+                villainLoserImageView.isHidden = true
                 fightButton.isHidden = false
+                heroeImageView.isHidden = false
+                villainImageView.isHidden = false
+                withoutHeroeImageView.isHidden = true
+                withoutVillainImageView.isHidden = true
+            }
+            
+            // Selecting winner to combat
+            if viewModel.combat.winner != nil {
+                withoutVillainImageView.isHidden = true
+                withoutHeroeImageView.isHidden = true
+                fightButton.isHidden = true
+                if viewModel.combat.winner == viewModel.combat.heroe?.name {
+                    
+                    // Heroe is the winner
+                    heroeWinnerImageView.isHidden = false
+                    heroeLoserImageView.isHidden = true
+                    villainWinnerImageView.isHidden = true
+                    villainLoserImageView.isHidden = false
+                    fightButton.isHidden = true
+                    heroeImageView.isHidden = false
+                    villainImageView.isHidden = false
+                    withoutHeroeImageView.isHidden = true
+                    withoutVillainImageView.isHidden = true
+                } else {
+                    
+                    // Villain is the winner
+                    heroeWinnerImageView.isHidden = true
+                    heroeLoserImageView.isHidden = false
+                    villainWinnerImageView.isHidden = false
+                    villainLoserImageView.isHidden = true
+                    fightButton.isHidden = true
+                    heroeImageView.isHidden = false
+                    villainImageView.isHidden = false
+                    withoutHeroeImageView.isHidden = true
+                    withoutVillainImageView.isHidden = true
+                }
             }
             
             combatLabel.text = "Combat #\(viewModel.combat.combat_id)"
             setupUI()
-            
-            
-            
-            
-            
-//            // Showing heroe, or villain or heroe and villain images
-//            guard let viewModel = viewModel,
-//                let heroeImageName = viewModel.combat.heroe?.profile_image,
-//                let heroeImage = UIImage(named: heroeImageName),
-//                let villainImageName = viewModel.combat.villain?.profile_image,
-//                let villainImage = UIImage(named: villainImageName) else {
-//
-//                    // When combat is new and has no heroe or villain
-//                    setupUI()
-//                    return
-//
-//            }
-//            heroeImageView.image = heroeImage
-//            villainImageView.image = villainImage
-//            setupUI()
         }
     }
     
@@ -232,14 +271,14 @@ class CombatsCell: UITableViewCell {
 
         NSLayoutConstraint.activate([
             heroeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            heroeImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            heroeImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
             heroeImageView.widthAnchor.constraint(equalToConstant: 150),
             heroeImageView.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         NSLayoutConstraint.activate([
             villainImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            villainImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            villainImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
             villainImageView.widthAnchor.constraint(equalToConstant: 150),
             villainImageView.heightAnchor.constraint(equalToConstant: 100)
         ])
@@ -303,7 +342,7 @@ class CombatsCell: UITableViewCell {
     }
     
     @objc private func handleFightStarted() {
-        
+        viewModel?.onStartingCombat()
     }
     
     @objc private func handleChooseHeroe() {

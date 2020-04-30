@@ -36,8 +36,8 @@ class DataProvider {
         return localDataProvider?.fetchHeroes()
     }
     
-    func deleteHeroe(with name: String) {
-        localDataProvider?.deleteHeroe(with: name)
+    func deleteHeroe(withName name: String) {
+        localDataProvider?.deleteHeroe(withName: name)
     }
     
     // MARK: - Combats persistance
@@ -49,8 +49,8 @@ class DataProvider {
         return localDataProvider?.fetchCombats()
     }
     
-    func deleteCombat(with id: Int16) {
-        localDataProvider?.deleteCombat(with: id)
+    func deleteCombat(withId id: Int16) {
+        localDataProvider?.deleteCombat(withId: id)
     }
     
     // MARK: - Villains persistance
@@ -62,8 +62,8 @@ class DataProvider {
         return localDataProvider?.fetchVillains()
     }
     
-    func deleteVillain(with name: String) {
-        localDataProvider?.deleteVillain(with: name)
+    func deleteVillain(withName name: String) {
+        localDataProvider?.deleteVillain(withName: name)
     }
     
     // MARK: - Initial characters data

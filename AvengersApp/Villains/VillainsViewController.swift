@@ -75,8 +75,10 @@ class VillainsViewController: UIViewController {
 extension VillainsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectRow(indexPath)
-        tableView.deselectRow(at: indexPath, animated: true)
+        if !UserDefaults.standard.bool(forKey: "Presenting villain module") {
+            viewModel.didSelectRow(indexPath)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
