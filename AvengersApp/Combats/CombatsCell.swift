@@ -16,7 +16,7 @@ class CombatsCell: UITableViewCell {
         let image = UIImage(systemName: "bolt.fill")
         let iv = UIImageView(image: image)
         iv.isHidden = true
-        iv.tintColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        iv.tintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -35,7 +35,7 @@ class CombatsCell: UITableViewCell {
         let image = UIImage(systemName: "bolt.fill")
         let iv = UIImageView(image: image)
         iv.isHidden = true
-        iv.tintColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        iv.tintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -164,6 +164,44 @@ class CombatsCell: UITableViewCell {
         return btn
     }()
     
+    lazy var heroeLabel: UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "HEROE"
+        label.font = UIFont(name: AvengersCell.avengersAppFont, size: 10)
+        label.textColor = #colorLiteral(red: 0.8015423417, green: 0.5596194863, blue: 0.5582501888, alpha: 1)
+        return label
+    }()
+    
+    lazy var villainLabel: UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "VILLAIN"
+        label.font = UIFont(name: AvengersCell.avengersAppFont, size: 10)
+        label.textColor = #colorLiteral(red: 0.8015423417, green: 0.5596194863, blue: 0.5582501888, alpha: 1)
+        return label
+    }()
+    
+    lazy var swordView: UIImageView = {
+        let image = UIImage(named: "ic_tab_battles")?.withRenderingMode(.alwaysTemplate)
+        let iv = UIImageView(image: image)
+        iv.isHidden = true
+        iv.tintColor = #colorLiteral(red: 0.5068067348, green: 0.5162527076, blue: 0.5026569078, alpha: 1)
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
+    
+    lazy var flameFilledView: UIImageView = {
+        let image = UIImage(systemName: "flame.fill")?.withRenderingMode(.alwaysTemplate)
+        let iv = UIImageView(image: image)
+        iv.isHidden = true
+        iv.tintColor = #colorLiteral(red: 0.8015423417, green: 0.5596194863, blue: 0.5582501888, alpha: 0.3741883117)
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
+    
     var viewModel: CombatsCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
@@ -179,6 +217,10 @@ class CombatsCell: UITableViewCell {
                 villainImageView.isHidden = true
                 withoutHeroeImageView.isHidden = false
                 withoutVillainImageView.isHidden = true
+                heroeLabel.isHidden = true
+                villainLabel.isHidden = true
+                flameFilledView.isHidden = true
+                swordView.isHidden = false
             }
             
             // 2. Selecting heroe to combat
@@ -196,6 +238,10 @@ class CombatsCell: UITableViewCell {
                 villainImageView.isHidden = true
                 withoutHeroeImageView.isHidden = true
                 withoutVillainImageView.isHidden = false
+                heroeLabel.isHidden = false
+                villainLabel.isHidden = true
+                flameFilledView.isHidden = true
+                swordView.isHidden = false
             }
             
             // Selecting villain to combat
@@ -213,6 +259,10 @@ class CombatsCell: UITableViewCell {
                 villainImageView.isHidden = false
                 withoutHeroeImageView.isHidden = true
                 withoutVillainImageView.isHidden = true
+                heroeLabel.isHidden = false
+                villainLabel.isHidden = false
+                flameFilledView.isHidden = true
+                swordView.isHidden = true
             }
             
             // Selecting winner to combat
@@ -232,6 +282,10 @@ class CombatsCell: UITableViewCell {
                     villainImageView.isHidden = false
                     withoutHeroeImageView.isHidden = true
                     withoutVillainImageView.isHidden = true
+                    heroeLabel.isHidden = false
+                    villainLabel.isHidden = false
+                    flameFilledView.isHidden = false
+                    swordView.isHidden = true
                 } else {
                     
                     // Villain is the winner
@@ -244,9 +298,12 @@ class CombatsCell: UITableViewCell {
                     villainImageView.isHidden = false
                     withoutHeroeImageView.isHidden = true
                     withoutVillainImageView.isHidden = true
+                    heroeLabel.isHidden = false
+                    villainLabel.isHidden = false
+                    flameFilledView.isHidden = false
+                    swordView.isHidden = true
                 }
             }
-            
             combatLabel.text = "Combat #\(viewModel.combat.combat_id)"
             setupUI()
         }
@@ -256,6 +313,9 @@ class CombatsCell: UITableViewCell {
     private func setupUI() {
         contentView.backgroundColor = #colorLiteral(red: 0.9626390338, green: 0.9626776576, blue: 0.9913365245, alpha: 1)
         
+        contentView.addSubview(flameFilledView)
+        contentView.addSubview(swordView)
+
         contentView.addSubview(heroeImageView)
         contentView.addSubview(villainImageView)
         contentView.addSubview(withoutHeroeImageView)
@@ -268,6 +328,9 @@ class CombatsCell: UITableViewCell {
         contentView.addSubview(heroeLoserImageView)
         contentView.addSubview(villainWinnerImageView)
         contentView.addSubview(villainLoserImageView)
+        
+        contentView.addSubview(heroeLabel)
+        contentView.addSubview(villainLabel)
 
         NSLayoutConstraint.activate([
             heroeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
@@ -285,21 +348,21 @@ class CombatsCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             withoutHeroeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            withoutHeroeImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            withoutHeroeImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
             withoutHeroeImageView.widthAnchor.constraint(equalToConstant: 150),
             withoutHeroeImageView.heightAnchor.constraint(equalToConstant: 100)
         ])
 
         NSLayoutConstraint.activate([
             withoutVillainImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            withoutVillainImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            withoutVillainImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
             withoutVillainImageView.widthAnchor.constraint(equalToConstant: 150),
             withoutVillainImageView.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         NSLayoutConstraint.activate([
             fightButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            fightButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            fightButton.centerYAnchor.constraint(equalTo: heroeImageView.centerYAnchor),
             fightButton.widthAnchor.constraint(equalToConstant: 40),
             fightButton.heightAnchor.constraint(equalToConstant: 40)
         ])
@@ -331,12 +394,40 @@ class CombatsCell: UITableViewCell {
             villainWinnerImageView.widthAnchor.constraint(equalToConstant: 30),
             villainWinnerImageView.heightAnchor.constraint(equalToConstant: 30)
         ])
-
+        
         NSLayoutConstraint.activate([
             villainLoserImageView.leadingAnchor.constraint(equalTo: villainImageView.leadingAnchor, constant: 4),
             villainLoserImageView.topAnchor.constraint(equalTo: villainImageView.topAnchor, constant: 4),
             villainLoserImageView.widthAnchor.constraint(equalToConstant: 30),
             villainLoserImageView.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            heroeLabel.trailingAnchor.constraint(equalTo: combatLabel.leadingAnchor, constant: -20),
+            heroeLabel.centerYAnchor.constraint(equalTo: combatLabel.centerYAnchor, constant: 10),
+            heroeLabel.widthAnchor.constraint(equalToConstant: 50),
+            heroeLabel.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            villainLabel.leadingAnchor.constraint(equalTo: combatLabel.trailingAnchor, constant: 20),
+            villainLabel.centerYAnchor.constraint(equalTo: combatLabel.centerYAnchor, constant: 10),
+            villainLabel.widthAnchor.constraint(equalToConstant: 200),
+            villainLabel.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            flameFilledView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            flameFilledView.bottomAnchor.constraint(equalTo: heroeImageView.bottomAnchor),
+            flameFilledView.widthAnchor.constraint(equalToConstant: 80),
+            flameFilledView.heightAnchor.constraint(equalToConstant: 80)
+        ])
+        
+        NSLayoutConstraint.activate([
+            swordView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            swordView.centerYAnchor.constraint(equalTo: heroeImageView.centerYAnchor),
+            swordView.widthAnchor.constraint(equalToConstant: 40),
+            swordView.heightAnchor.constraint(equalToConstant: 40)
         ])
 
     }
