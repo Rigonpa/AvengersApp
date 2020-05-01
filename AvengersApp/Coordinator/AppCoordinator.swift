@@ -49,6 +49,9 @@ class AppCoordinator: Coordinator {
         settingUpTabBar(tabBarController, heroesNavigationController,
                         combatsNavigationController, villainsNavigationController)
         
+        // Opening the app with last opened screen of the previous app session:
+        tabBarController.selectedIndex = UserDefaults.standard.integer(forKey: "LastScreen")
+        
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
     }

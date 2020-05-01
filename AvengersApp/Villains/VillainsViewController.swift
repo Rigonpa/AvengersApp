@@ -51,6 +51,11 @@ class VillainsViewController: UIViewController {
 //        print("After")
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(tabBarController?.selectedIndex, forKey: "LastScreen")
+        print(tabBarController?.selectedIndex)
+    }
+    
     // MARK: - Private methods
     private func setupUI() {
         navigationItem.title = "Villains"

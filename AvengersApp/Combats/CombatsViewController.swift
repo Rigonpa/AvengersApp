@@ -65,7 +65,7 @@ class CombatsViewController: UIViewController {
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
 //        print("Before")
 //        viewModel.showAllCombats()
 //        print("\n\n")
@@ -80,6 +80,11 @@ class CombatsViewController: UIViewController {
 //        print("\n\n")
 //        print("After")
     
+    }
+    
+   override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(tabBarController?.selectedIndex, forKey: "LastScreen")
+        print(tabBarController?.selectedIndex)
     }
     
     // MARK: - Private methods

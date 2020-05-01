@@ -15,6 +15,7 @@
 		931900BE2456E1950048E414 /* PowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931900BD2456E1950048E414 /* PowerCell.swift */; };
 		931900C02456E1AD0048E414 /* CombatsTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931900BF2456E1AD0048E414 /* CombatsTrackCell.swift */; };
 		931900C22456E29F0048E414 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931900C12456E29F0048E414 /* DescriptionCell.swift */; };
+		932DCA58245C9C7600DC96B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 932DCA57245C9C7600DC96B5 /* LaunchScreen.storyboard */; };
 		932F4B0F24588CCF00D407A7 /* CombatsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F4B0E24588CCF00D407A7 /* CombatsCellViewModel.swift */; };
 		932F4B1124588CDA00D407A7 /* CombatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F4B1024588CDA00D407A7 /* CombatsCell.swift */; };
 		9334829C245590D400C7F8E7 /* AvengersDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9334829A245590D400C7F8E7 /* AvengersDatabase.xcdatamodeld */; };
@@ -54,6 +55,7 @@
 		931900BD2456E1950048E414 /* PowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCell.swift; sourceTree = "<group>"; };
 		931900BF2456E1AD0048E414 /* CombatsTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatsTrackCell.swift; sourceTree = "<group>"; };
 		931900C12456E29F0048E414 /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		932DCA57245C9C7600DC96B5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		932F4B0E24588CCF00D407A7 /* CombatsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatsCellViewModel.swift; sourceTree = "<group>"; };
 		932F4B1024588CDA00D407A7 /* CombatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatsCell.swift; sourceTree = "<group>"; };
 		9334829B245590D400C7F8E7 /* AvengersDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AvengersDatabase.xcdatamodel; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				93A8540524545BB900F520D8 /* AppDelegate.swift */,
 				93A8540724545BB900F520D8 /* SceneDelegate.swift */,
 				93A8541324545BBC00F520D8 /* Info.plist */,
+				932DCA57245C9C7600DC96B5 /* LaunchScreen.storyboard */,
 			);
 			path = AvengersApp;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A8542E24548EE000F520D8 /* Assets.xcassets in Resources */,
+				932DCA58245C9C7600DC96B5 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
