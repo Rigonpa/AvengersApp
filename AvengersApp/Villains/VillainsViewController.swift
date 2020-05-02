@@ -53,7 +53,6 @@ class VillainsViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         UserDefaults.standard.set(tabBarController?.selectedIndex, forKey: "LastScreen")
-        print(tabBarController?.selectedIndex)
     }
     
     // MARK: - Private methods
@@ -76,7 +75,6 @@ class VillainsViewController: UIViewController {
 }
 
 // MARK: - Tableview methods
-
 extension VillainsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

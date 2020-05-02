@@ -55,7 +55,6 @@ class HeroesViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         UserDefaults.standard.set(tabBarController?.selectedIndex, forKey: "LastScreen")
-        print(tabBarController?.selectedIndex)
     }
     
     // MARK: - Private methods
@@ -75,7 +74,6 @@ class HeroesViewController: UIViewController {
     fileprivate func updateUI() {
         tableView.reloadData()
     }
-    
 }
 
 // MARK: - Tableview methods

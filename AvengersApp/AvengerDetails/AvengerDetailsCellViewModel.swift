@@ -10,12 +10,12 @@ import Foundation
 
 protocol DetailsCellViewModelDelegate {
     func onUpdatingPower(power: Int16, heroe: Heroe?, villain: Villain?)
-//    func onShowingPowerUpdated(heroe: Heroe?, villain: Villain?) -> (Heroe?, Villain?)
     func onShowingPowerUpdated(heroe: Heroe?, villain: Villain?) -> Int16
 }
 
 class AvengerDetailsCellViewModel {
     
+    // MARK: - Public properties
     var heroe: Heroe?
     var villain: Villain?
     
@@ -31,9 +31,8 @@ class AvengerDetailsCellViewModel {
         self.villain = villain
     }
     
+    // MARK: - Public methods
     func updatePower(newPower: Int16, heroe: Heroe?, villain: Villain?) {
-//        viewModelDelegate?.onUpdatingPower(power: newPower, heroe: heroe, villain: villain)
-        
         viewModelDelegate?.onUpdatingPower(power: newPower, heroe: heroe, villain: villain)
     }
     

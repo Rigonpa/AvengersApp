@@ -10,6 +10,7 @@ import UIKit
 
 class CombatsCell: UITableViewCell {
     
+    // MARK: - Public properties
     static let cellIdentifier: String = String(describing: CombatsCell.self)
     
     lazy var heroeWinnerImageView: UIImageView = {

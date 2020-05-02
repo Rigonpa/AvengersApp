@@ -10,6 +10,7 @@ import UIKit
 
 class PowerCell: UITableViewCell {
     
+    // MARK: - Public properties
     static let cellIndentifier: String = String(describing: PowerCell.self)
     
     lazy var editingButton: UIButton = {
@@ -89,6 +90,7 @@ class PowerCell: UITableViewCell {
         }
     }
     
+    // MARK: - Private methods
     private func setupUI() {
         contentView.backgroundColor = #colorLiteral(red: 0.9626390338, green: 0.9626776576, blue: 0.9913365245, alpha: 1)
 
@@ -142,7 +144,7 @@ class PowerCell: UITableViewCell {
         ])
     }
     
-    @objc func handleEditPower() {
+    @objc private func handleEditPower() {
         label.isHidden = true
         powerImageView.isHidden = true
         editingButton.isHidden = true
@@ -152,7 +154,7 @@ class PowerCell: UITableViewCell {
 
     }
     
-    @objc func handleSavePower() {
+    @objc private func handleSavePower() {
         label.isHidden = false
         powerImageView.isHidden = false
         editingButton.isHidden = false

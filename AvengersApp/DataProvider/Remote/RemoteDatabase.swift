@@ -8,6 +8,6 @@
 
 import Foundation
 
-class RemoteDatabase: RemoteDataProvider {
+class RemoteDatabase {
     
 }

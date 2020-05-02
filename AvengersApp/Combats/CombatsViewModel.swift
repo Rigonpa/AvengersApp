@@ -36,7 +36,6 @@ class CombatsViewModel {
 //        guard let combats = dataProvider.provideInicialCombats() else { return }
         for each in 0...combats.count - 1 {
             let combatCellViewModel = CombatsCellViewModel(combat: combats[each])
-//            combatCellViewModel.combat.combat_id = Int16(each + 1)
             combatCellViewModel.viewModelDelegate = self // I have again forgotten to assign view model delegate to myself
             combatViewModels.append(combatCellViewModel)
         }
@@ -126,7 +125,6 @@ extension CombatsViewModel: CombatViewModelDelegate {
                 combat.winner = heroe.name
             }
         }
-        
         dataProvider.saveAvengerUpdates()
         fetchCombats()
     }

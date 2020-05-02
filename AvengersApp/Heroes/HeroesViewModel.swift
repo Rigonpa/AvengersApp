@@ -45,9 +45,9 @@ class HeroesViewModel {
             heroes = initialHeroes
             dataProvider.saveAvengerUpdates()
         }
-//        guard let heroesToShow = heroes else { return }
-        for each in 0...heroes!.count - 1 {
-            let heroeCellViewModel = HeroesCellViewModel(heroe: heroes![each])
+        guard let heroesToShow = heroes else { return }
+        for each in 0...heroesToShow.count - 1 {
+            let heroeCellViewModel = HeroesCellViewModel(heroe: heroesToShow[each])
             heroeCellViewModel.viewModelDelegate = self // ****** THE MOST IMPORTANT STEP I ALWAYS FORGET ******
             heroeViewModels.append(heroeCellViewModel)
         }
@@ -83,7 +83,6 @@ extension HeroesViewModel: HeroesViewModelDelegate {
     
     func heroeForFightSelected(heroe: Heroe) {
         guard let combats = dataProvider.loadCombats() else { return }
-        print("Please\n\n")
         showAllCombats()
         
         let combat = combats.filter{ $0.heroe == nil }

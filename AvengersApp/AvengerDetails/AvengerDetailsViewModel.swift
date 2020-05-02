@@ -18,6 +18,7 @@ protocol AvengerDetailsViewDelegate {
 
 class AvengerDetailsViewModel {
     
+    // MARK: - Public properties
     var onPowerWasUpdated: (() -> Void)?
     
     var detailsViewModel: AvengerDetailsCellViewModel?
@@ -30,6 +31,7 @@ class AvengerDetailsViewModel {
         self.dataProvider = dataProvider
     }
     
+    // MARK: - Public methods
     func onWillShowHeroeDetails(_ heroe: Heroe) {
         detailsViewModel = AvengerDetailsCellViewModel(heroe: heroe)
     }

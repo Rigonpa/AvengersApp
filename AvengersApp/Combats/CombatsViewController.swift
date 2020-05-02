@@ -82,13 +82,11 @@ class CombatsViewController: UIViewController {
     
     }
     
-   override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         UserDefaults.standard.set(tabBarController?.selectedIndex, forKey: "LastScreen")
-        print(tabBarController?.selectedIndex)
     }
     
     // MARK: - Private methods
-    
     private func updateUI() {
         tableView.reloadData()
         let indexPath = IndexPath(item: viewModel.numberRows() - 1, section: 0)

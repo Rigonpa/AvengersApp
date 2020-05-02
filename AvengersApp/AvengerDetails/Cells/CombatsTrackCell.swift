@@ -10,6 +10,7 @@ import UIKit
 
 class CombatsTrackCell: UITableViewCell {
     
+    // MARK: - Public properties
     static let cellIndentifier: String = String(describing: CombatsTrackCell.self)
     
     var combatsTrack = [Combat]()
@@ -44,6 +45,7 @@ class CombatsTrackCell: UITableViewCell {
         }
     }
     
+    // MARK: - Private methods
     private func setupUI() {
         contentView.backgroundColor = #colorLiteral(red: 0.9626390338, green: 0.9626776576, blue: 0.9913365245, alpha: 1)
         
@@ -129,7 +131,7 @@ extension CombatsTrackCell: UICollectionViewDelegate, UICollectionViewDataSource
     }
 }
 
-// MARK: - Combats unitary collection cell
+// MARK: - COLLECTION CELL CLASS: Combats unitary cell
 class CombatsUnitaryCell: UICollectionViewCell {
     
     lazy var combatLabel: UILabel = {

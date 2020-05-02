@@ -10,6 +10,7 @@ import UIKit
 
 class ImageCell: UITableViewCell {
     
+    // MARK: - Public properties
     static let cellIndentifier: String = String(describing: ImageCell.self)
     
     lazy var avengerImageView: UIImageView = {
@@ -40,7 +41,8 @@ class ImageCell: UITableViewCell {
         }
     }
     
-    func setupUI() {
+    // MARK: - Private methods
+    private func setupUI() {
         contentView.addSubview(avengerImageView)
         contentView.backgroundColor = #colorLiteral(red: 0.9626390338, green: 0.9626776576, blue: 0.9913365245, alpha: 1)
         NSLayoutConstraint.activate([

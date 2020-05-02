@@ -11,7 +11,6 @@ import UIKit
 class AvengerDetailsViewController: UIViewController {
     
     // MARK: - Public properties
-    
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +34,7 @@ class AvengerDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -85,7 +85,7 @@ extension AvengerDetailsViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cellViewModel = viewModel.setDetailViewModel() else { fatalError() }
         switch indexPath.row {
-            
+        // Same cellViewModel for the 4 detail cells (image, power, combats and description):
         // ImageCell
         case 0:
             guard let cell = tableView.dequeueReusableCell(
