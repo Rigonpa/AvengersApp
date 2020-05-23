@@ -32,11 +32,14 @@ class CombatsViewModel {
     
     func fetchCombats() {
         combatViewModels = [] // Important so that cells do not duplicate
-        guard let combats = dataProvider.loadCombats(), !combats.isEmpty else { return }
+        guard let combats = dataProvider.loadCombats(), !combats.isEmpty else {
+            viewDelegate?.onshowingCombatsUpdates()
+            return
+        }
 //        guard let combats = dataProvider.provideInicialCombats() else { return }
         for each in 0...combats.count - 1 {
             let combatCellViewModel = CombatsCellViewModel(combat: combats[each])
-            combatCellViewModel.viewModelDelegate = self // I have again forgotten to assign view model delegate to myself
+            combatCellViewModel.viewModelDelegate = self // I have again forgotten to assign view model delegate to combatsViewModel
             combatViewModels.append(combatCellViewModel)
         }
         viewDelegate?.onshowingCombatsUpdates()
@@ -45,7 +48,7 @@ class CombatsViewModel {
     // MARK: - Public methods
     func onAvengerWasAssignedToCombat() {
         fetchCombats()
-        showAllCombats()
+//        showAllCombats()
     }
     
     func onNewCombatRequested() {
@@ -53,7 +56,7 @@ class CombatsViewModel {
         newCombat.combat_id = Int16(combatViewModels.count + 1)
         dataProvider.saveAvengerUpdates()
         fetchCombats()
-        showAllCombats()
+//        showAllCombats()
     }
     
     func newCombatButtonEnabled() -> Bool {
@@ -86,13 +89,18 @@ class CombatsViewModel {
         combatToDelete.forEach{ dataProvider.deleteCombat(withId: $0.combat_id) }
         dataProvider.saveAvengerUpdates()
         
-        guard let newCombats = dataProvider.loadCombats() else { return }
+        guard let newCombats = dataProvider.loadCombats(), !newCombats.isEmpty else {
+            dataProvider.saveAvengerUpdates()
+            fetchCombats()
+            return
+        }
+        
         for each in 0...newCombats.count - 1 {
             newCombats[each].combat_id = Int16(each + 1)
         }
         dataProvider.saveAvengerUpdates()
-        
         fetchCombats()
+        
     }
 }
 
@@ -101,7 +109,7 @@ extension CombatsViewModel: CombatViewModelDelegate {
     func onStartingCombat() {
         sleep(3)
         guard let combats = dataProvider.loadCombats() else { return }
-        showAllCombats()
+//        showAllCombats()
         let combatNow = combats.filter{ $0.winner == nil }
         let combat = combatNow[0]
         

@@ -89,6 +89,7 @@ class CombatsViewController: UIViewController {
     // MARK: - Private methods
     private func updateUI() {
         tableView.reloadData()
+        guard viewModel.numberRows() != 0 else { return }
         let indexPath = IndexPath(item: viewModel.numberRows() - 1, section: 0)
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }

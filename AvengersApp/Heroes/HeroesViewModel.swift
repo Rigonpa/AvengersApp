@@ -83,13 +83,13 @@ extension HeroesViewModel: HeroesViewModelDelegate {
     
     func heroeForFightSelected(heroe: Heroe) {
         guard let combats = dataProvider.loadCombats() else { return }
-        showAllCombats()
+//        showAllCombats()
         
         let combat = combats.filter{ $0.heroe == nil }
         
         combat[0].heroe = heroe
         dataProvider.saveAvengerUpdates()
-        showAllCombats()
+//        showAllCombats()
         coordinatorDelegate?.onHeroeWasAssignedToCombat()
     }
 }
