@@ -29,7 +29,6 @@
 		93A85428245486E500F520D8 /* HeroesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A85427245486E500F520D8 /* HeroesCoordinator.swift */; };
 		93A8542A245486F600F520D8 /* VillainsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A85429245486F600F520D8 /* VillainsCoordinator.swift */; };
 		93A8542C2454870500F520D8 /* CombatsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A8542B2454870500F520D8 /* CombatsCoordinator.swift */; };
-		93A8542E24548EE000F520D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A8542D24548EE000F520D8 /* Assets.xcassets */; };
 		93A854332454A3C100F520D8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854322454A3C100F520D8 /* UIImage+Extension.swift */; };
 		93A854352454BB5800F520D8 /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854342454BB5800F520D8 /* HeroesViewModel.swift */; };
 		93A854372454BB9700F520D8 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A854362454BB9700F520D8 /* HeroesViewController.swift */; };
@@ -43,6 +42,7 @@
 		93B36F0D2456063D007C4012 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B36F0C2456063D007C4012 /* UIColor+Extension.swift */; };
 		93B36F0F24560DC9007C4012 /* HeroesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B36F0E24560DC9007C4012 /* HeroesCellViewModel.swift */; };
 		93B36F1124560DD3007C4012 /* AvengersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B36F1024560DD3007C4012 /* AvengersCell.swift */; };
+		93BCB46A2479534000FDC253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BCB4692479534000FDC253 /* Assets.xcassets */; };
 		93D28A982454CA6F00CC75AC /* CoreDataDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D28A972454CA6F00CC75AC /* CoreDataDatabase.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +71,6 @@
 		93A85427245486E500F520D8 /* HeroesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCoordinator.swift; sourceTree = "<group>"; };
 		93A85429245486F600F520D8 /* VillainsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillainsCoordinator.swift; sourceTree = "<group>"; };
 		93A8542B2454870500F520D8 /* CombatsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatsCoordinator.swift; sourceTree = "<group>"; };
-		93A8542D24548EE000F520D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Gitlab David/project/Assets.xcassets"; sourceTree = "<group>"; };
 		93A854322454A3C100F520D8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		93A854342454BB5800F520D8 /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
 		93A854362454BB9700F520D8 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		93B36F0C2456063D007C4012 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		93B36F0E24560DC9007C4012 /* HeroesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCellViewModel.swift; sourceTree = "<group>"; };
 		93B36F1024560DD3007C4012 /* AvengersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvengersCell.swift; sourceTree = "<group>"; };
+		93BCB4692479534000FDC253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93D28A972454CA6F00CC75AC /* CoreDataDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,7 +179,7 @@
 		93A8541A24545DE500F520D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				93A8542D24548EE000F520D8 /* Assets.xcassets */,
+				93BCB4692479534000FDC253 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A8542E24548EE000F520D8 /* Assets.xcassets in Resources */,
+				93BCB46A2479534000FDC253 /* Assets.xcassets in Resources */,
 				932DCA58245C9C7600DC96B5 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
