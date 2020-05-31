@@ -24,7 +24,7 @@ class ImageCell: UITableViewCell {
         return iv
     }()
     
-    var viewModel: AvengerDetailsCellViewModel? {
+    var viewModel: ImageCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
             if let heroeImageName = viewModel.heroe?.profile_image {

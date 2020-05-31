@@ -18,6 +18,7 @@ class CombatsViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.delegate = self
         table.dataSource = self
+        table.showsVerticalScrollIndicator = false
         table.register(CombatsCell.self, forCellReuseIdentifier: CombatsCell.cellIdentifier)
         return table
     }()

@@ -18,6 +18,7 @@ class HeroesViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.delegate = self
         table.dataSource = self
+        table.showsVerticalScrollIndicator = false
         table.register(AvengersCell.self, forCellReuseIdentifier: AvengersCell.cellIdentifier)
         return table
     }()

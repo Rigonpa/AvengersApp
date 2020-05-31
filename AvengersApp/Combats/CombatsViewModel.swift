@@ -9,8 +9,8 @@
 import Foundation
 
 protocol CombatsCoordinatorDelegate {
-    func onChoosingHeroe()
-    func onChoosingVillain()
+    func onChoosingHeroeForFighting()
+    func onChoosingVillainForFighting()
 }
 
 protocol CombatsViewDelegate {
@@ -138,10 +138,10 @@ extension CombatsViewModel: CombatViewModelDelegate {
     }
     
     func onChoosingVillain() {
-        coordinatorDelegate?.onChoosingVillain()
+        coordinatorDelegate?.onChoosingVillainForFighting()
     }
     
     func onChoosingHeroe() {
-        coordinatorDelegate?.onChoosingHeroe()
+        coordinatorDelegate?.onChoosingHeroeForFighting()
     }
 }

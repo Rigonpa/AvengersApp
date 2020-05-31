@@ -49,7 +49,7 @@ class HeroesCoordinator: Coordinator {
         heroesViewModel.viewDelegate = heroesViewController
         self.heroesViewModel = heroesViewModel // ****** THE MOST IMPORTANT STEP I ALWAYS FORGET ******
         
-        UserDefaults.standard.set(true, forKey: "Presenting heroe module")
+        UserDefaults.standard.set(true, forKey: CombatsCoordinator.presentHeroeModule)
         
 //        let navigationController = UINavigationController(rootViewController: heroesViewController)
 //        self.chooseHeroeNavigationController = navigationController

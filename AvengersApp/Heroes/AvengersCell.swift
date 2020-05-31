@@ -15,7 +15,6 @@ class AvengersCell: UITableViewCell {
     static let avengersAppFont = "Rockwell-Bold"
     
     // MARK: - Public properties
-    
     lazy var fightButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -86,21 +85,13 @@ class AvengersCell: UITableViewCell {
     var choosingAvenger: Bool = false
     
     // MARK: - Private methods
-    @objc private func handleAvengerSelectedToFight() {
-        if let heroeSelected = heroesViewModel?.heroe {
-            heroesViewModel?.heroeForFightSelected(heroe: heroeSelected)
-        } else if let villainSelected = villainsViewModel?.villain {
-            villainsViewModel?.villainForFightSelected(villain: villainSelected)
-        }
-    }
-    
     private func setupCellUI() {
         
-        if UserDefaults.standard.bool(forKey: "Presenting heroe module") {
+        if UserDefaults.standard.bool(forKey: CombatsCoordinator.presentHeroeModule) {
             fightButton.isHidden = false
         }
         
-        if UserDefaults.standard.bool(forKey: "Presenting villain module") {
+        if UserDefaults.standard.bool(forKey: CombatsCoordinator.presentVillainModule) {
             fightButton.isHidden = false
         }
 
@@ -158,6 +149,14 @@ class AvengersCell: UITableViewCell {
             default:
                 let starsImage = UIImage(named: "ic_stars_5")
                 powerImageView.image = starsImage
+        }
+    }
+    
+    @objc private func handleAvengerSelectedToFight() {
+        if let heroeSelected = heroesViewModel?.heroe {
+            heroesViewModel?.heroeForFightSelected(heroe: heroeSelected)
+        } else if let villainSelected = villainsViewModel?.villain {
+            villainsViewModel?.villainForFightSelected(villain: villainSelected)
         }
     }
 }

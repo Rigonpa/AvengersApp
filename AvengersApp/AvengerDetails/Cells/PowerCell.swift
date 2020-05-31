@@ -77,7 +77,7 @@ class PowerCell: UITableViewCell {
         return btn
     }()
     
-    var viewModel: AvengerDetailsCellViewModel? {
+    var viewModel: PowerCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
             if let heroePower = viewModel.heroe?.power {

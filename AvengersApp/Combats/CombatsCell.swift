@@ -433,15 +433,15 @@ class CombatsCell: UITableViewCell {
 
     }
     
-    @objc private func handleFightStarted() {
-        viewModel?.onStartingCombat()
-    }
-    
     @objc private func handleChooseHeroe() {
         viewModel?.onWillChooseHeroe()
     }
     
     @objc private func handleChooseVillain() {
         viewModel?.onWillChooseVillain()
+    }
+    
+    @objc private func handleFightStarted() {
+        viewModel?.onStartingCombat()
     }
 }

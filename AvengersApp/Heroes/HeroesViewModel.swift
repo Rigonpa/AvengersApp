@@ -87,7 +87,7 @@ extension HeroesViewModel: HeroesViewModelDelegate {
         
         let combat = combats.filter{ $0.heroe == nil }
         
-        combat[0].heroe = heroe
+        combat[0].heroe = heroe // I obtain [Combat] of 1 element, that is why combat[0]...
         dataProvider.saveAvengerUpdates()
 //        showAllCombats()
         coordinatorDelegate?.onHeroeWasAssignedToCombat()

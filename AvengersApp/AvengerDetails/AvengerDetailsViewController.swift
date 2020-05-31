@@ -83,35 +83,35 @@ extension AvengerDetailsViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellViewModel = viewModel.setDetailViewModel() else { fatalError() }
+        guard let cellViewModel = viewModel.setDetailViewModel(indexPath: indexPath) else { fatalError() } // Common factor
         switch indexPath.row {
-        // Same cellViewModel for the 4 detail cells (image, power, combats and description):
+
         // ImageCell
         case 0:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ImageCell.cellIndentifier, for: indexPath) as? ImageCell else { fatalError() }
-            cell.viewModel = cellViewModel
+            cell.viewModel = cellViewModel as? ImageCellViewModel
             return cell
             
         // PowerCell
         case 1:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: PowerCell.cellIndentifier, for: indexPath) as? PowerCell else { fatalError() }
-            cell.viewModel = cellViewModel
+            cell.viewModel = cellViewModel as? PowerCellViewModel
             return cell
             
         // CombatsCell
         case 2:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: CombatsTrackCell.cellIndentifier, for: indexPath) as? CombatsTrackCell else { fatalError() }
-            cell.viewModel = cellViewModel
+            cell.viewModel = cellViewModel as? CombatsTrackCellViewModel
             return cell
             
         // DescriptionCell
         default:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: DescriptionCell.cellIndentifier, for: indexPath) as? DescriptionCell else { fatalError() }
-            cell.viewModel = cellViewModel
+            cell.viewModel = cellViewModel as? DescriptionCellViewModel
             return cell
         }
     }

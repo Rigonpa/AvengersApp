@@ -21,7 +21,7 @@ class AvengerDetailsViewModel {
     // MARK: - Public properties
     var onPowerWasUpdated: (() -> Void)?
     
-    var detailsViewModel: AvengerDetailsCellViewModel?
+    var detailsViewModel: [CellViewModel] = []
     
     var coordinatorDelegate: AvengerDetailsCoordinatorDelegate?
     var viewDelegate: AvengerDetailsViewDelegate?
@@ -33,20 +33,28 @@ class AvengerDetailsViewModel {
     
     // MARK: - Public methods
     func onWillShowHeroeDetails(_ heroe: Heroe) {
-        detailsViewModel = AvengerDetailsCellViewModel(heroe: heroe)
+        detailsViewModel.append(ImageCellViewModel(heroe: heroe))
+        detailsViewModel.append(PowerCellViewModel(heroe: heroe))
+        detailsViewModel.append(CombatsTrackCellViewModel(heroe: heroe))
+        detailsViewModel.append(DescriptionCellViewModel(heroe: heroe))
     }
     
     func onWillShowVillainDetails(_ villain: Villain) {
-        detailsViewModel = AvengerDetailsCellViewModel(villain: villain)
+        detailsViewModel.append(ImageCellViewModel(villain: villain))
+        detailsViewModel.append(PowerCellViewModel(villain: villain))
+        detailsViewModel.append(CombatsTrackCellViewModel(villain: villain))
+        detailsViewModel.append(DescriptionCellViewModel(villain: villain))
     }
     
     func heroesSection() -> Bool {
-        return detailsViewModel?.heroe != nil
+        let imageCellViewModel = detailsViewModel[0] as? ImageCellViewModel
+        return imageCellViewModel?.heroe != nil
     }
     
     func navigationItemTitle() -> String? {
-        detailsViewModel?.viewModelDelegate = self // ****** THE MOST IMPORTANT STEP I ALWAYS FORGET ******
-        return detailsViewModel?.heroe != nil ? detailsViewModel?.heroe?.name : detailsViewModel?.villain?.name
+        let powerCellViewModel = detailsViewModel[1] as? PowerCellViewModel
+        powerCellViewModel?.viewModelDelegate = self // ****** THE MOST IMPORTANT STEP I ALWAYS FORGET ******
+        return powerCellViewModel?.heroe != nil ? powerCellViewModel?.heroe?.name : powerCellViewModel?.villain?.name
     }
     
     // MARK: - Table view methods
@@ -67,8 +75,8 @@ class AvengerDetailsViewModel {
         }
     }
     
-    func setDetailViewModel() -> AvengerDetailsCellViewModel? {
-        return detailsViewModel
+    func setDetailViewModel(indexPath: IndexPath) -> CellViewModel? {
+        return detailsViewModel[indexPath.row]
     }
 }
 

@@ -1,8 +1,8 @@
 //
-//  AvengersDetailCellViewModel.swift
+//  PowerCellViewModel.swift
 //  AvengersApp
 //
-//  Created by Ricardo González Pacheco on 27/04/2020.
+//  Created by Ricardo González Pacheco on 30/05/2020.
 //  Copyright © 2020 Ricardo González Pacheco. All rights reserved.
 //
 
@@ -13,23 +13,22 @@ protocol DetailsCellViewModelDelegate {
     func onShowingPowerUpdated(heroe: Heroe?, villain: Villain?) -> Int16
 }
 
-class AvengerDetailsCellViewModel {
-    
+class PowerCellViewModel: CellViewModel {
     // MARK: - Public properties
-    var heroe: Heroe?
-    var villain: Villain?
-    
-    var viewModelDelegate: DetailsCellViewModelDelegate?
-    
-    convenience init(heroe: Heroe) {
-        self.init()
-        self.heroe = heroe
-    }
-    
-    convenience init(villain: Villain) {
-        self.init()
-        self.villain = villain
-    }
+       var heroe: Heroe?
+       var villain: Villain?
+       
+       var viewModelDelegate: DetailsCellViewModelDelegate?
+       
+       convenience init(heroe: Heroe) {
+           self.init()
+           self.heroe = heroe
+       }
+       
+       convenience init(villain: Villain) {
+           self.init()
+           self.villain = villain
+       }
     
     // MARK: - Public methods
     func updatePower(newPower: Int16, heroe: Heroe?, villain: Villain?) {

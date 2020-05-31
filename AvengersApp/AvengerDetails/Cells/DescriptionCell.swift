@@ -35,7 +35,7 @@ class DescriptionCell: UITableViewCell {
     
     static let cellIndentifier: String = String(describing: DescriptionCell.self)
     
-    var viewModel: AvengerDetailsCellViewModel? {
+    var viewModel: DescriptionCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
             if viewModel.heroe != nil {
