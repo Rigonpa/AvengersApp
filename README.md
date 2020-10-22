@@ -4,7 +4,6 @@
 
 - mvvm with coordinators and data manager
 - CoreData
-- UI design
 
 -------
 <img src="https://github.com/Rigonpa/ImagesForProjects/blob/master/AvengersApp/image1.png" alt="alt text" width="150" height="300">  <img src="https://github.com/Rigonpa/ImagesForProjects/blob/master/AvengersApp/image2.png" alt="alt text" width="150" height="300"> <img src="https://github.com/Rigonpa/ImagesForProjects/blob/master/AvengersApp/image3.png" alt="alt text" width="150" height="300">  <img src="https://github.com/Rigonpa/ImagesForProjects/blob/master/AvengersApp/Image4.png" alt="alt text" width="150" height="300">
